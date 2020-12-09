@@ -46,7 +46,6 @@ class Algorithm(
         val probs = mutableListOf<Double>()
         best?.coupons?.forEach { probs.add(it.getProb()) }
         val x = 2
-
     }
 
     private fun initChartDataset() {

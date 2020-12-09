@@ -16,7 +16,7 @@ class SingleCouponSwapMutator : PopulationMutator() {
 
         var found = false
         var iteration = 0
-        while (!found || iteration < 3) {
+        while (!found && iteration < 3) {
             val firstCouponIndex = Random.nextInt(couponsGroup.coupons.size - 1)
             val secondCouponIndex = Random.nextInt(couponsGroup.coupons.size - 1)
             val firstCoupon = couponsGroup.coupons[firstCouponIndex]

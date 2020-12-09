@@ -2,8 +2,14 @@ package ga
 
 import ga.entity.CouponsGroup
 
-interface PopulationRater {
+abstract class PopulationRater {
 
-    fun ratePopulation(population: List<CouponsGroup>)
+    abstract fun rateCouponsGroup(couponsGroup: CouponsGroup)
+
+    fun ratePopulation(population: List<CouponsGroup>) {
+        population.forEach {
+            rateCouponsGroup(it)
+        }
+    }
 
 }

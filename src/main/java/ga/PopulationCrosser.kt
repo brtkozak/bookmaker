@@ -1,11 +1,14 @@
 package ga
 
+import ga.entity.Coupon
 import ga.entity.CouponsGroup
 import kotlin.random.Random
 
 abstract class PopulationCrosser {
 
     protected abstract fun cross(parents: Pair<CouponsGroup, CouponsGroup>): Pair<CouponsGroup, CouponsGroup>
+
+    protected abstract fun fixPopulation(population: List<CouponsGroup>)
 
     fun crossPopulation(population: List<CouponsGroup>): List<CouponsGroup> {
         val newPopulation = mutableListOf<CouponsGroup>()
@@ -23,7 +26,29 @@ abstract class PopulationCrosser {
             }
             oldPopulation.remove(firstParent)
         }
-
+        fixPopulation(newPopulation)
         return newPopulation
+    }
+
+    fun onePointCrosser(parents: Pair<CouponsGroup, CouponsGroup>): Pair<CouponsGroup, CouponsGroup> {
+        if (parents.first.coupons.size > 1 && parents.second.coupons.size > 1) {
+
+            val firstParentSplitPoint = Random.nextInt(parents.first.coupons.size - 1)
+            val secondParentSplitPoint = Random.nextInt(parents.second.coupons.size - 1)
+
+            val firstParentCoupons = parents.first.coupons.toMutableList()
+            val secondParentCoupons = parents.second.coupons.toMutableList()
+
+            val firstChild = CouponsGroup()
+            firstChild.coupons.addAll(firstParentCoupons.take(firstParentSplitPoint))
+            firstChild.coupons.addAll(secondParentCoupons.takeLast(secondParentCoupons.size - secondParentSplitPoint))
+
+            val secondChild = CouponsGroup()
+            secondChild.coupons.addAll(firstParentCoupons.takeLast(firstParentCoupons.size - firstParentSplitPoint))
+            secondChild.coupons.addAll(secondParentCoupons.take(secondParentSplitPoint))
+
+            return Pair(firstChild, secondChild)
+
+        } else return Pair(parents.first, parents.second)
     }
 }

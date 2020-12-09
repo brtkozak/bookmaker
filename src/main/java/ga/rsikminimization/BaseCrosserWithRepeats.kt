@@ -1,10 +1,10 @@
-package ga.equalprob
+package ga.rsikminimization
 
 import ga.FixUtils
 import ga.PopulationCrosser
 import ga.entity.CouponsGroup
 
-class BaseCrosser : PopulationCrosser() {
+class BaseCrosserWithRepeats : PopulationCrosser() {
 
     override fun cross(parents: Pair<CouponsGroup, CouponsGroup>): Pair<CouponsGroup, CouponsGroup> {
         return onePointCrosser(parents)
@@ -12,7 +12,7 @@ class BaseCrosser : PopulationCrosser() {
 
     override fun fixPopulation(population: List<CouponsGroup>) {
         population.forEach {
-            FixUtils.removeBetsRepeats(it)
+            FixUtils.removeCouponsRepeats(it)
             FixUtils.addRemainingAvailableBets(it)
         }
     }
