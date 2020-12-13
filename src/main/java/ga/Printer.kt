@@ -42,7 +42,7 @@ class Printer {
             print("Iteration ${"%3s".format(iteration)}  ")
             print("Avg: ${average.format(6, 4.2)}  ")
             print("Median: ${median.format(6, 4.2)}  ")
-            print("Best: ${best.format(6, 4.2)}  ")
+            print("Best: ${best.format(6, 4.6)}  ")
             println("Worst: ${worst.format(6, 4.2)}  ")
         }
 

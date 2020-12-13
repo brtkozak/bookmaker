@@ -79,6 +79,9 @@ class RiskMinimizationRater : PopulationRater() {
                 loseProbability += routeProb
             }
         }
+        if(loseProbability == 0.0 || loseProbability ==0.1) {
+            val x  =2
+        }
         return loseProbability
     }
 

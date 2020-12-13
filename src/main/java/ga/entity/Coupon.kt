@@ -34,7 +34,7 @@ data class Coupon(
     fun getWinCash () : Double {
         val o = getOdd()
         val c= contribution
-        return getOdd() * contribution
+        return getOdd() * (contribution * 0.88)
     }
 
     fun areBetsTheSame(other : Coupon)  : Boolean {
@@ -48,6 +48,15 @@ data class Coupon(
                 return false
         }
         return true
+    }
+
+    fun doesSupport(bet : SingleBet) : Boolean {
+        this.bets.forEach {
+            if(it.name1 ==  bet.name1 || it.name1 == bet.name2 || it.name2 == bet.name1 || it.name2 == bet.name2) {
+                return true
+            }
+        }
+        return false
     }
 }
 

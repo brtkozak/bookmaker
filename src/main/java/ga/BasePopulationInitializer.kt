@@ -12,6 +12,9 @@ class BasePopulationInitializer : PopulationInitializer {
         for (i in 0 until populationSize) {
             result.add(getGroup(availableBets))
         }
+        result.forEach {
+            FixUtils.handleSupportedBets(it)
+        }
         return result
     }
 

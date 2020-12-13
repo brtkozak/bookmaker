@@ -11,8 +11,8 @@ class FixUtils {
     companion object {
 
         fun handleSupportedBets(couponsGroup: CouponsGroup) {
-            var supported = mutableListOf<SingleBet>()
-            couponsGroup.coupons.forEach {coupon ->
+            val supportedMap = mutableMapOf<Int, List<SingleBet>>()
+            couponsGroup.coupons.forEach { coupon ->
                 var supportedOnSingleCoupon = mutableListOf<SingleBet>()
                 coupon.bets.forEach { bet ->
                     val jumper1Bets = coupon.bets.filter { it.name1 == bet.name1 || it.name2 == bet.name2 }
@@ -21,12 +21,49 @@ class FixUtils {
                     }
                 }
                 supportedOnSingleCoupon = supportedOnSingleCoupon.distinctBy { it.id } as MutableList<SingleBet>
-                supported.addAll(supportedOnSingleCoupon)
+                supportedOnSingleCoupon = supportedOnSingleCoupon.map { it.copy() } as MutableList<SingleBet>
+                supportedMap[couponsGroup.coupons.indexOf(coupon)] =  supportedOnSingleCoupon
             }
-            supported = supported.map { it.copy() } as MutableList<SingleBet>
-            // sprobowac dodac do istenijacych kuponow zaklady z supoprted tak zeby sie nie wspieraly i zeby rozmiar nie przekroczyl rozmiaru max z main
-            // albo wygenerowac nowe kupony z supported tak zeby sie nie wspierdaly i dodac do istniejaccyh
-            // ale chodzi o to zeby manipulwoac rozmiarem kuponow
+
+            // remove supported from every coupon
+            supportedMap.forEach { k, v ->
+                val ids = v.map { it.id }
+                couponsGroup.coupons[k].bets.removeAll { bet -> ids.contains(bet.id) }
+            }
+
+            // change map to flatten list
+            val supported = supportedMap.values.toList().flatten()
+
+            // idea jest taka, ze probujesz dodac kazdy z zakladow z supported do losowo wybranego kuponu i sprawdzasz czy nie bedzie go wspieral, badz cz
+            // nie przekroczy kupon rozmiaru max z main, jeśli nie spełni tych warunkow to dodajesz ten zaklad do drugiej listy z ktorej na koniec generujesz kupony nie wspierajace sie
+
+            val rest = mutableListOf<SingleBet>()
+            supported.forEach {
+                val randomCoupon = couponsGroup.coupons[Random.nextInt(couponsGroup.coupons.size)]
+                if( !randomCoupon.doesSupport(it) && randomCoupon.bets.size < Main.MAX_COUPON_SIZE) {
+                    randomCoupon.bets.add(it)
+                } else {
+                    rest.add(it)
+                }
+            }
+
+            if (rest.size > 0) {
+                val couponsFromRest = mutableListOf<Coupon>()
+                couponsFromRest.add(Coupon(mutableListOf(rest[0])))
+                rest.removeAt(0)
+                rest.forEach { bet ->
+                    var added = false
+                    couponsFromRest.forEach { coupon ->
+                        if (!coupon.doesSupport(bet)) {
+                            coupon.bets.add(bet)
+                            added = true
+                        }
+                    }
+                    if (!added)
+                        couponsFromRest.add(Coupon(mutableListOf(bet)))
+                }
+                couponsGroup.coupons.addAll(couponsFromRest)
+            }
         }
 
         fun removeCouponsRepeats(couponsGroup: CouponsGroup) {

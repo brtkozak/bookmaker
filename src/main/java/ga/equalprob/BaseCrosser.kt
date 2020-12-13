@@ -14,6 +14,7 @@ class BaseCrosser : PopulationCrosser() {
         population.forEach {
             FixUtils.removeBetsRepeats(it)
             FixUtils.addRemainingAvailableBets(it)
+            FixUtils.handleSupportedBets(it)
         }
     }
 

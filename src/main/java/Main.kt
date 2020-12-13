@@ -19,9 +19,9 @@ class Main {
         // COMMON
         val MIN_VALUE = 1.1
         val MIN_SINGLE_BET_ODD = 1.6
-        val MAX_SINGLE_BET_ODD = 2.5
-        val ITERANTIONS = 2000
-        val POPULATION_SIZE = 200
+        val MAX_SINGLE_BET_ODD = 2.0
+        val ITERANTIONS = 200
+        val POPULATION_SIZE = 100
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
         val ELITE_COUNT : Int = (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt()
@@ -47,9 +47,9 @@ class Main {
                     POPULATION_SIZE,
                     chosenBets,
                     BasePopulationInitializer(),
-                    EqualProbRater(PROB_MEAN),
+                    RiskMinimizationRater(),
                     TournamentSelector(TOURNAMENT_SIZE),
-                    BaseCrosser(),
+                    BaseCrosserWithRepeats(),
                     SingleCouponSwapMutator(),
                     LineChart())
             algorithm.run()

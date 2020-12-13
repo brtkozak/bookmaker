@@ -32,7 +32,6 @@ class ProbabilityCalculator {
             }
         }
 
-
         val mean = stats.mean
         val std = stats.standardDeviation
         if (commonJumps < 2 || std == 0.0)
@@ -51,8 +50,8 @@ class ProbabilityCalculator {
         val jumper2WinProbability = 1 - jumper1WinProbability
 
         // test
-        val name1 = "kobayashi"
-        val name2 = "lindvik"
+        val name1 = "geiger"
+        val name2 = "stoch"
         if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)  ) {
             val x = 2
         }
@@ -82,7 +81,8 @@ class ProbabilityCalculator {
         return when {
             jump.tournament.contains("wisla") -> 0.3
             jump.tournament.contains("ruka") -> 0.5
-            jump.tournament.contains("nizny") -> 20.0
+            jump.tournament.contains("nizny") -> 0.8
+            jump.tournament.contains("planica") -> 20.0
             else -> 0.0
         }
     }
