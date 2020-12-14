@@ -1,7 +1,6 @@
-package ga.equalprob
+package ga
 
 import data.entity.bets.SingleBet
-import ga.PopulationMutator
 import ga.entity.CouponsGroup
 import kotlin.random.Random
 

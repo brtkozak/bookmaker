@@ -4,10 +4,8 @@ import data.StatisticsConverter
 import data.ProbabilityCalculator
 import data.entity.bets.SingleBet
 import ga.*
-import ga.equalprob.BaseCrosser
 import ga.BasePopulationInitializer
-import ga.equalprob.EqualProbRater
-import ga.equalprob.SingleCouponSwapMutator
+import ga.SingleCouponSwapMutator
 import ga.rsikminimization.BaseCrosserWithRepeats
 import ga.rsikminimization.RiskMinimizationRater
 
@@ -17,7 +15,7 @@ class Main {
         // CONST
 
         // COMMON
-        val MIN_VALUE = 1.1
+        val MIN_VALUE = 1.0
         val MIN_SINGLE_BET_ODD = 1.6
         val MAX_SINGLE_BET_ODD = 2.0
         val ITERANTIONS = 200

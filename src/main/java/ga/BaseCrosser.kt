@@ -1,7 +1,5 @@
-package ga.equalprob
+package ga
 
-import ga.FixUtils
-import ga.PopulationCrosser
 import ga.entity.CouponsGroup
 
 class BaseCrosser : PopulationCrosser() {
