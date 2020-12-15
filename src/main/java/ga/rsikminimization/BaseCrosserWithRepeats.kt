@@ -17,8 +17,7 @@ class BaseCrosserWithRepeats : PopulationCrosser() {
             FixUtils.addRemainingAvailableBets(it)
             FixUtils.handleSupportedBets(it)
             FixUtils.removeCouponsRepeats(it)
-            val p2 = it
-            val x = 2
+            it.coupons.removeAll { c -> c.bets.isEmpty() }
         }
     }
 

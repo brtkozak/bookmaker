@@ -12,4 +12,8 @@ data class CouponsGroup(
         copy.rate = this.rate
         return copy
     }
+
+    fun getContribution() : Double {
+        return coupons.sumByDouble { it.contribution }
+    }
 }

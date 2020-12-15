@@ -1,7 +1,9 @@
 package ga.rsikminimization
 
-import data.entity.bets.SingleBet
 import ga.PopulationRater
+import ga.dfstree.DfsTree
+import ga.dfstree.Node
+import ga.dfstree.Result
 import ga.entity.CouponsGroup
 
 class RiskMinimizationRater : PopulationRater() {
@@ -11,49 +13,16 @@ class RiskMinimizationRater : PopulationRater() {
 
     override fun rateCouponsGroup(couponsGroup: CouponsGroup) {
         this.couponsGroup = couponsGroup.copy()
-        buildTree(couponsGroup)
+        routes.clear()
+        routes.addAll(DfsTree.buildTree(couponsGroup))
         val result = processRoutes()
         couponsGroup.rate = result
         this.couponsGroup = null
         routes.clear()
     }
 
-    private fun buildTree(couponsGroup: CouponsGroup) {
-        var singleBets = mutableListOf<SingleBet>()
-        couponsGroup.coupons.forEach {
-            it.bets.forEach { bet ->
-                singleBets.add(bet.copy())
-            }
-        }
-        singleBets = singleBets.distinctBy { it.id } as MutableList<SingleBet>
-
-        val root = Node(null, null)
-        root.leftChild = buildNode(singleBets, Result.WIN)
-        root.rightChild = buildNode(singleBets, Result.LOSE)
-        dfs(root, mutableListOf())
-    }
-
-    private fun buildNode(bets: List<SingleBet>, result: Result): Node? {
-        return if (bets.isNotEmpty()) {
-            val node = Node(bets[0], result)
-            node.leftChild = buildNode(bets.toMutableList().drop(1), Result.WIN)
-            node.rightChild = buildNode(bets.toMutableList().drop(1), Result.LOSE)
-            node
-        } else
-            null
-    }
-
-    private fun dfs(node: Node, route: MutableList<Node>) {
-        route.add(node)
-        if(node.leftChild != null && node.rightChild != null) {
-            dfs(node.leftChild!!, route.toMutableList())
-            dfs(node.rightChild!!, route.toMutableList())
-        } else {
-            routes.add(route)
-        }
-    }
-
     private fun processRoutes(): Double {
+        val totalContribution = couponsGroup?.getContribution() ?: 0.0
         var loseProbability = 0.0
 
         routes.forEach { nodes ->
@@ -65,7 +34,7 @@ class RiskMinimizationRater : PopulationRater() {
                 }
             }
 
-            if (winCash < Main.CONTRIBUTION) {
+            if (winCash < totalContribution) {
                 var routeProb = 1.0
                 nodes.forEach {
                     if (it.bet?.myProb != null) {
@@ -85,14 +54,4 @@ class RiskMinimizationRater : PopulationRater() {
         return loseProbability
     }
 
-    data class Node(
-            val bet: SingleBet?,
-            val result: Result?,
-            var leftChild: Node? = null,
-            var rightChild: Node? = null
-    )
-
-    enum class Result {
-        WIN, LOSE
-    }
 }

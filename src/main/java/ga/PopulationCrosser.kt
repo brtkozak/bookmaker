@@ -10,13 +10,13 @@ abstract class PopulationCrosser {
 
     protected abstract fun fixPopulation(population: List<CouponsGroup>)
 
-    fun crossPopulation(population: List<CouponsGroup>): List<CouponsGroup> {
+    fun crossPopulation(population: List<CouponsGroup>, force : Boolean): List<CouponsGroup> {
         val newPopulation = mutableListOf<CouponsGroup>()
         val oldPopulation = population.toMutableList()
         while (newPopulation.size < population.size) {
             val firstParent = oldPopulation[0]
             val shouldCross = Random.nextDouble(0.0, 1.0)
-            if (shouldCross < Main.CROSSING_PROBABLITY && Main.POPULATION_SIZE - Main.ELITE_COUNT - newPopulation.size != 1 ) {
+            if ((shouldCross < Main.CROSSING_PROBABLITY || force) && Main.POPULATION_SIZE - Main.ELITE_COUNT - newPopulation.size != 1 ) {
                 val secondParent = oldPopulation[1]
                 val children = cross(Pair(firstParent, secondParent))
                 newPopulation.addAll(listOf(children.first, children.second))

@@ -4,12 +4,9 @@ import data.entity.bets.SingleBet
 import ga.entity.CouponsGroup
 import kotlin.random.Random
 
-class SingleCouponSwapMutator : PopulationMutator() {
+class DoubleBetSwapMutator : PopulationMutator() {
 
     override fun mutate(couponsGroup: CouponsGroup) {
-        val mutate = Random.nextDouble(1.0)
-        if (mutate > Main.MUTATION_PROBABILITY)
-            return
         if(couponsGroup.coupons.size < 2)
             return
 
