@@ -6,6 +6,7 @@ data class JumperResults(
 
 data class Jump(
         val tournament: String,
+        val day : Int,
         val tournamentType: TournamentType,
         val points: Double
 )

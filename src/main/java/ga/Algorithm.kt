@@ -20,7 +20,7 @@ class Algorithm(
     private val bestChromosomeRateForIterationDataSet =
             ChartDataSet("Best chromosome rate for iteration", "Iteration", "Best chromosome rate")
 
-    fun run() {
+    fun run() : CouponsGroup? {
         var iteration = 0
         population = populationInitializer.initPopulation(populationSize, availableBets) as MutableList<CouponsGroup>
         populationRater.ratePopulation(population)
@@ -76,7 +76,7 @@ class Algorithm(
         drawCharts()
 
         val best = population.minByOrNull { it.rate }
-        drawGainChart(best)
+//        drawGainChart(best)
         printExpectedValue(best)
 
         val probs = mutableListOf<Double>()
@@ -87,6 +87,8 @@ class Algorithm(
         println("COUPONS: ${best?.coupons?.size}")
         println("ALL BETS: ${best?.coupons?.sumBy { it.bets.size }}")
         val x = 2
+
+        return best
     }
 
     private fun drawGainChart(best : CouponsGroup?) {

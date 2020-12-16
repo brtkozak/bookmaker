@@ -16,4 +16,15 @@ data class CouponsGroup(
     fun getContribution() : Double {
         return coupons.sumByDouble { it.contribution }
     }
+
+    fun getGain(): Double {
+        var gain = 0.0
+        coupons.forEach { coupon ->
+            if (!coupon.bets.any { bet -> !bet.win }) {
+                gain += coupon.getWinCash()
+            }
+        }
+        gain -= getContribution()
+        return gain
+    }
 }

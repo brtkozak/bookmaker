@@ -34,7 +34,8 @@ data class Coupon(
     fun getWinCash () : Double {
         val o = getOdd()
         val c= contribution
-        return getOdd() * (contribution * 0.88)
+//        return getOdd() * (contribution * 0.88)
+        return getOdd() * (contribution)
     }
 
     fun areBetsTheSame(other : Coupon)  : Boolean {
