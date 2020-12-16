@@ -68,7 +68,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="system_simulation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -249,11 +249,11 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="483" y="53" key="#xdebugger.evaluate/0.23.1440.812@0.23.1440.812" timestamp="1607965735489" />
-    <state x="404" y="65" key="CommitChangelistDialog2" timestamp="1607960361791">
+    <state x="404" y="65" key="CommitChangelistDialog2" timestamp="1608148351483">
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1607853663338" />
-    <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812@0.23.1440.812" timestamp="1607960361791" />
+    <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812@0.23.1440.812" timestamp="1608148351483" />
     <state x="1979" y="35" key="CommitChangelistDialog2/0.23.1440.877/1440.-76.1920.992@1440.-76.1920.992" timestamp="1607527560548" />
     <state x="1824" y="58" key="DiffContextDialog" timestamp="1607527568024">
       <screen x="1440" y="-76" width="1920" height="992" />
@@ -371,11 +371,11 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="208" y="23" key="SettingsEditor/0.23.1440.812@0.23.1440.812" timestamp="1607255549014" />
-    <state x="420" y="201" key="Vcs.Push.Dialog.v2" timestamp="1607960471945">
+    <state x="420" y="201" key="Vcs.Push.Dialog.v2" timestamp="1608148356846">
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1607853665216" />
-    <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1607960471945" />
+    <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1608148356846" />
     <state x="2000" y="141" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-76.1920.992@1440.-76.1920.992" timestamp="1607527568764" />
     <state width="960" height="528" key="XDebugger.FullValuePopup" timestamp="1607166166697">
       <screen x="1440" y="-76" width="1920" height="1057" />
