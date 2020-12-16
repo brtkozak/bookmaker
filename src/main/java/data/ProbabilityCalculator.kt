@@ -34,12 +34,12 @@ class ProbabilityCalculator {
 
         val mean = stats.mean
         val std = stats.standardDeviation
-        if (commonJumps < 2 || std == 0.0)
+        if (commonJumps < 7 || std == 0.0)
             return null
 
         val normalDistribution = NormalDistribution(mean, std)
         var jumper1Wins = 0.0
-        val samples = 1000
+        val samples = 2000
         for (i in 0..samples) {
             val sample1= normalDistribution.sample()
             val sample2 = normalDistribution.sample()
@@ -50,8 +50,8 @@ class ProbabilityCalculator {
         val jumper2WinProbability = 1 - jumper1WinProbability
 
         // test
-        val name1 = "prevc d"
-        val name2 = "sato k"
+        val name1 = "kobayashi r"
+        val name2 = "aalto"
         if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)  ) {
             val x = 2
         }
@@ -62,29 +62,64 @@ class ProbabilityCalculator {
 
     private fun getWeight(jump: Jump): Double {
         val x = getTournamentTypeWeight(jump) * getTournamentWeight(jump)
-        if(jump.tournament.contains("nizny")){
-            val z = 2
-        }
         return x
     }
 
     private fun getTournamentTypeWeight(jump: Jump): Double {
         return when (jump.tournamentType) {
-            TournamentType.T -> 1.0
-            TournamentType.K -> 1.2
-            TournamentType.P -> 1.2
+            TournamentType.T -> 0.5
+            TournamentType.K -> 0.8
+            TournamentType.P -> 1.0
             TournamentType.Z -> 1.5
         }
     }
 
+//    private fun getTournamentWeight(jump: Jump): Double {
+//        var weight = when {
+//            jump.tournament.contains("wisla") -> 1.0 * 0.5
+//            jump.tournament.contains("ruka") -> 2.0 * 0.5
+//            jump.tournament.contains("nizny") -> 4.0 * 0.5
+//            jump.tournament.contains("planica") -> 8.0 * 0.5
+//            else -> 0.0
+//        }
+//
+//        if(jump.tournament.contains(BetsConverter.lastTournament))
+//            weight *= 20
+//
+//        return weight
+//    }
+
     private fun getTournamentWeight(jump: Jump): Double {
-        return when {
-            jump.tournament.contains("wisla") -> 0.3
-            jump.tournament.contains("ruka") -> 0.5
-            jump.tournament.contains("nizny") -> 0.8
-            jump.tournament.contains("planica") -> 30.0
-            else -> 0.0
+        var dayBonus = 1.0
+        if(jump.tournament.contains(BetsConverter.lastTournament)) {
+            dayBonus = when(jump.day) {
+                1 -> 1.0
+                2 -> 1.5
+                3 -> 2.0
+                else -> 1.0
+            }
+        }
+        return dayBonus * when {
+            BetsConverter.lastTournament.contains("nizny") -> {
+                 when {
+                    jump.tournament.contains("wisla") -> 1.0
+                    jump.tournament.contains("ruka") -> 2.0
+                    jump.tournament.contains("nizny") -> 4.0
+                    else -> 0.0
+                }
+            }
+            BetsConverter.lastTournament.contains("planica") -> {
+                when {
+                    jump.tournament.contains("wisla") -> 1.0
+                    jump.tournament.contains("ruka") -> 2.0
+                    jump.tournament.contains("nizny") -> 4.0
+                    jump.tournament.contains("planica") -> 8.0
+                    else -> 0.0
+                }
+            }
+            else -> return 0.0
         }
     }
+
 
 }

@@ -7,5 +7,6 @@ data class SingleBet (
         val odd: Double,
         val bookProb: Double,
         var myProb: Double,
-        var value: Double
+        var value: Double,
+        val win: Boolean
 )

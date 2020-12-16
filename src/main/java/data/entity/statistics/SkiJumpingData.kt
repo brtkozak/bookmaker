@@ -9,6 +9,7 @@ data class SkiJumpingData(
 data class Tournament(
         val name: String,
         val type: String,
+        val day: Int = 0,
         @SerializedName("jumps")
         val results: List<Result>
 )

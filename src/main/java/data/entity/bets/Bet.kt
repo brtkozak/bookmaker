@@ -10,5 +10,6 @@ data class Bet(
         var my1Prob: Double = 0.0,
         var my2Prob: Double = 0.0,
         var value1: Double = 0.0,
-        var value2: Double = 0.0
+        var value2: Double = 0.0,
+        val won: Int
 )

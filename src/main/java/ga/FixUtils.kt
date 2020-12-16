@@ -15,14 +15,10 @@ class FixUtils {
             couponsGroup.coupons.forEach { coupon ->
                 var supportedOnSingleCoupon = mutableListOf<SingleBet>()
                 coupon.bets.forEach { bet ->
-                    val jumper1Bets = coupon.bets.filter { it.name1 == bet.name1 || it.name1 == bet.name2 }
-                    val jumper2Bets  = coupon.bets.filter { it.name2 == bet.name1 || it.name2 == bet.name2 }
+                    val jumper1Bets = coupon.bets.filter { it.name1 == bet.name1 || it.name2 == bet.name2 }
                     if (jumper1Bets.size > 1) {
                         supportedOnSingleCoupon.addAll(jumper1Bets.takeLast(jumper1Bets.size - 1))
                     }
-                    if (jumper2Bets.size > 1) {
-                    supportedOnSingleCoupon.addAll(jumper2Bets.takeLast(jumper2Bets.size - 1))
-                }
                 }
                 supportedOnSingleCoupon = supportedOnSingleCoupon.distinctBy { it.id } as MutableList<SingleBet>
                 supportedOnSingleCoupon = supportedOnSingleCoupon.map { it.copy() } as MutableList<SingleBet>

@@ -7,5 +7,6 @@ data class BetsDto(
 data class BetDto(
         val names: String,
         val odd1: String,
-        val odd2: String
+        val odd2: String,
+        val won: Int
 )
