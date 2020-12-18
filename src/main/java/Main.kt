@@ -6,12 +6,7 @@ import data.entity.bets.SingleBet
 import ga.*
 import ga.BasePopulationInitializer
 import ga.DoubleBetSwapMutator
-import ga.entity.Coupon
-import ga.entity.CouponsGroup
 import ga.equalprob.EqualProbRater
-import ga.propportionalodd.ProportionalOddRater
-import ga.rsikminimization.BaseCrosserWithRepeats
-import ga.rsikminimization.RiskMinimizationRater
 
 class Main {
     companion object {
@@ -44,21 +39,15 @@ class Main {
         val ODD_STEP = 0.3
         // CONST
 
+        val MODE = Mode.WSki
+
+        enum class Mode {
+            Jump, MSki, WSki
+        }
+
         @JvmStatic
         fun main(args: Array<String>) {
             simulateSystem()
-//            val chosenBets = getSingleBets(MIN_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD)
-//            AVAILABLE_BETS = chosenBets.toMutableList()
-//            val algorithm = Algorithm(ITERANTIONS,
-//                    POPULATION_SIZE,
-//                    chosenBets,
-//                    BasePopulationInitializer(),
-//                    ProportionalOddRater(),
-//                    TournamentSelector(TOURNAMENT_SIZE),
-//                    BaseCrosser(),
-//                    listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
-//                    LineChart())
-//            algorithm.run()
         }
 
         fun getSingleBets(minValue: Double, maxValue: Double, minOdd: Double, maxOdd: Double, index : Int): List<SingleBet> {
@@ -66,7 +55,7 @@ class Main {
             val calculator = ProbabilityCalculator()
             val betsConverter = BetsConverter()
 
-            val skiJumpingData = converter.getSkiJumpingData(index)
+            val skiJumpingData = converter.getData(index)
             val skiJumpingResults = converter.getJumpersResults(skiJumpingData)
             val probabilities = calculator.getProbabilities(skiJumpingResults)
             val bets = betsConverter.getBets(probabilities, index)
@@ -106,7 +95,6 @@ class Main {
                 }
             }
             val totalGain = gains.sum()
-            val x = 2
             gains.forEach {
                 println("Gain: $it")
             }

@@ -43,15 +43,21 @@ class ProbabilityCalculator {
         for (i in 0..samples) {
             val sample1= normalDistribution.sample()
             val sample2 = normalDistribution.sample()
-            if(sample1 + sample2 > 0)
-                jumper1Wins++
+            if(Main.MODE == Main.Companion.Mode.Jump) {
+                if (sample1 + sample2 > 0)
+                    jumper1Wins++
+            }
+            else {
+                if(sample1 + sample2 <0)
+                    jumper1Wins ++
+            }
         }
         val jumper1WinProbability = jumper1Wins / samples
         val jumper2WinProbability = 1 - jumper1WinProbability
 
         // test
-        val name1 = "kobayashi r"
-        val name2 = "aalto"
+        val name1 = "huber"
+        val name2 = "eisenbi"
         if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)  ) {
             val x = 2
         }
