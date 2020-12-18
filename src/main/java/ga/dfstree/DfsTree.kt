@@ -8,6 +8,18 @@ class DfsTree {
     companion object {
         val routes = mutableListOf<List<Node>>()
 
+        fun buildTree(bets : List<SingleBet>): MutableList<List<Node>> {
+            val singleBets = bets.toMutableList()
+
+            val root = Node(null, null)
+            root.leftChild = buildNode(singleBets, Result.WIN)
+            root.rightChild = buildNode(singleBets, Result.LOSE)
+            dfs(root, mutableListOf())
+            val result = routes.toMutableList()
+            routes.clear()
+            return result
+        }
+
         fun buildTree(couponsGroup: CouponsGroup): MutableList<List<Node>> {
             var singleBets = mutableListOf<SingleBet>()
             couponsGroup.coupons.forEach {

@@ -20,24 +20,24 @@ class Main {
 
         // COMMON
         val MIN_VALUE = 1.0
-        val MAX_VALUE = 1.5
+        val MAX_VALUE = 1.4
         val MIN_SINGLE_BET_ODD = 1.4
         val MAX_SINGLE_BET_ODD = 2.5
-        val ITERANTIONS = 2000
-        val POPULATION_SIZE = 100
+        val ITERANTIONS = 20
+        val POPULATION_SIZE = 40
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
-        val ELITE_COUNT : Int = (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt()
+        val ELITE_COUNT : Int = if((POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() < 1) 1 else (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt()
         val MINIMALIZATION = true
         val CROSSING_PROBABLITY = 0.8
         val MUTATION_PROBABILITY = 0.2
         var AVAILABLE_BETS: MutableList<SingleBet> = mutableListOf()
-        var THE_SAME_BEST_ITERATIONS = ITERANTIONS/ 4
-        var THE_SAME_BEST_ITERATIONS_TIMES = 4
+        var THE_SAME_BEST_ITERATIONS = ITERANTIONS/ 2
+        var THE_SAME_BEST_ITERATIONS_TIMES = 2
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val PROB_MEAN = 1 / 4.0
+        val PROB_MEAN = 1 / 3.0
 
         // PROPORTIONAL RISK ONLY
         val BASE_ODD = 1.4
@@ -72,7 +72,9 @@ class Main {
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
             singleBets = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }
-            if(index == 3) {
+            if(index == 3) { // planica 2 usunac tych dwoch bo pelno zakladow na nich stawialo
+                singleBets = singleBets.filter { !it.name2.contains("geiger") }
+                singleBets = singleBets.filter { !it.name2.contains("granerud") }
                 val x = 2
             }
             return singleBets
@@ -83,15 +85,15 @@ class Main {
             val gains = mutableListOf<Double>()
             for(i in 0 until eventsSize) {
                 BetsConverter.setLastTournament(i)
-                val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
+                val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i).take(12)
                 AVAILABLE_BETS = chosenBets.toMutableList()
                 val algorithm = Algorithm(ITERANTIONS,
                         POPULATION_SIZE,
                         chosenBets,
                         BasePopulationInitializer(),
-                        EqualProbRater(PROB_MEAN),
+                        RiskMinimizationRater(),
                         TournamentSelector(TOURNAMENT_SIZE),
-                        BaseCrosser(),
+                        BaseCrosserWithRepeats(),
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
                         LineChart())
                 val best = algorithm.run()
@@ -106,7 +108,6 @@ class Main {
                 }
             }
             val totalGain = gains.sum()
-            val x = 2
             gains.forEach {
                 println("Gain: $it")
             }

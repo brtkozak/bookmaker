@@ -34,7 +34,7 @@ class ProbabilityCalculator {
 
         val mean = stats.mean
         val std = stats.standardDeviation
-        if (commonJumps < 7 || std == 0.0)
+        if (commonJumps < 3 || std == 0.0)
             return null
 
         val normalDistribution = NormalDistribution(mean, std)
@@ -67,8 +67,8 @@ class ProbabilityCalculator {
 
     private fun getTournamentTypeWeight(jump: Jump): Double {
         return when (jump.tournamentType) {
-            TournamentType.T -> 0.5
-            TournamentType.K -> 0.8
+            TournamentType.T -> 1.0
+            TournamentType.K -> 1.0
             TournamentType.P -> 1.0
             TournamentType.Z -> 1.5
         }
@@ -94,26 +94,26 @@ class ProbabilityCalculator {
         if(jump.tournament.contains(BetsConverter.lastTournament)) {
             dayBonus = when(jump.day) {
                 1 -> 1.0
-                2 -> 1.5
-                3 -> 2.0
+                2 -> 1.2
+                3 -> 1.4
                 else -> 1.0
             }
         }
         return dayBonus * when {
             BetsConverter.lastTournament.contains("nizny") -> {
                  when {
-                    jump.tournament.contains("wisla") -> 1.0
-                    jump.tournament.contains("ruka") -> 2.0
-                    jump.tournament.contains("nizny") -> 4.0
+                    jump.tournament.contains("wisla") -> 0.5
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 2.0
                     else -> 0.0
                 }
             }
             BetsConverter.lastTournament.contains("planica") -> {
                 when {
-                    jump.tournament.contains("wisla") -> 1.0
-                    jump.tournament.contains("ruka") -> 2.0
-                    jump.tournament.contains("nizny") -> 4.0
-                    jump.tournament.contains("planica") -> 8.0
+                    jump.tournament.contains("wisla") -> 0.5
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 2.0
+                    jump.tournament.contains("planica") -> 4.0
                     else -> 0.0
                 }
             }

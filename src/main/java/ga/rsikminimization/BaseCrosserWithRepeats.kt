@@ -12,8 +12,8 @@ class BaseCrosserWithRepeats : PopulationCrosser() {
 
     override fun fixPopulation(population: List<CouponsGroup>) {
         population.forEach {
-            val p1 = it.copy()
             FixUtils.removeCouponsRepeats(it)
+            it.coupons.filter { coupon -> coupon.bets.isNotEmpty() }
             FixUtils.addRemainingAvailableBets(it)
             FixUtils.handleSupportedBets(it)
             FixUtils.removeCouponsRepeats(it)
