@@ -8,5 +8,9 @@ data class SingleBet (
         val bookProb: Double,
         var myProb: Double,
         var value: Double,
-        val win: Boolean
+        val betResult: BetResult
 )
+
+enum class BetResult {
+    Win, Lose, Unknown
+}

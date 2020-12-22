@@ -1,10 +1,11 @@
 package ga.entity
 
+import data.entity.bets.BetResult
 import data.entity.bets.SingleBet
 
 data class Coupon(
         val bets: MutableList<SingleBet> = mutableListOf(),
-        var contribution : Double = 1.0
+        var contribution : Double = 100.0
 ) {
 
     fun getProb() : Double {
@@ -31,11 +32,23 @@ data class Coupon(
         return odd
     }
 
+    fun getOddAfterResults() : Double {
+        var odd = 1.0
+        bets.forEach {
+            if(it.betResult != BetResult.Unknown)
+                odd *= it.odd
+        }
+        return odd
+    }
+
     fun getWinCash () : Double {
-        val o = getOdd()
-        val c= contribution
-//        return getOdd() * (contribution * 0.88)
+//        return (contribution * 0.88) * getOdd()
         return getOdd() * (contribution)
+    }
+
+    fun getWinCashAfterResults () : Double {
+//        return (contribution * 0.88) * getOddAfterResults()
+        return getOddAfterResults() * (contribution)
     }
 
     fun areBetsTheSame(other : Coupon)  : Boolean {

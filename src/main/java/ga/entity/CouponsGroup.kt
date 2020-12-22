@@ -1,5 +1,7 @@
 package ga.entity
 
+import data.entity.bets.BetResult
+
 data class CouponsGroup(
         var coupons: MutableList<Coupon> = mutableListOf(),
         var rate: Double = 0.0
@@ -20,8 +22,8 @@ data class CouponsGroup(
     fun getGain(): Double {
         var gain = 0.0
         coupons.forEach { coupon ->
-            if (!coupon.bets.any { bet -> !bet.win }) {
-                gain += coupon.getWinCash()
+            if (!coupon.bets.any { bet -> bet.betResult == BetResult.Lose }) {
+                gain += coupon.getWinCashAfterResults()
             }
         }
         gain -= getContribution()
