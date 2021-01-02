@@ -24,6 +24,13 @@ class StatisticsConverter {
             val data = gson.fromJson(statistics[i], SkiJumpingData::class.java)
             first.tournaments.addAll(data.tournaments)
         }
+
+        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO OSTATNIE 5, jedne zaowdy maja srednio 8 serii wiec 8 * 5
+        val temp  = first.tournaments.takeLast(30)
+        first.tournaments.clear()
+        first.tournaments.addAll(temp)
+        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO OSTATNIE 5
+
         return first
     }
 

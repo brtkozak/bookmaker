@@ -14,8 +14,8 @@ class SkiJumpingWeights : Weights {
 
     private fun getTournamentTypeWeight(jump: Jump): Double {
         return when (jump.tournamentType) {
-            TournamentType.T -> 0.5
-            TournamentType.K -> 0.8
+            TournamentType.T -> 1.0
+            TournamentType.K -> 1.0
             TournamentType.P -> 1.0
             TournamentType.Z -> 1.5
         }
@@ -28,6 +28,7 @@ class SkiJumpingWeights : Weights {
                 1 -> 1.0
                 2 -> 1.5
                 3 -> 2.0
+                4 -> 2.5
                 else -> 1.0
             }
         }
@@ -54,8 +55,31 @@ class SkiJumpingWeights : Weights {
                     jump.tournament.contains("wisla") -> 1.0
                     jump.tournament.contains("ruka") -> 2.0
                     jump.tournament.contains("nizny") -> 4.0
-                    jump.tournament.contains("planica") -> 4.0
-                    jump.tournament.contains("engelberg") -> 32.0
+                    jump.tournament.contains("planica") -> 8.0
+                    jump.tournament.contains("engelberg") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("oberstdorf") -> {
+                when {
+                    jump.tournament.contains("wisla") -> 1.0
+                    jump.tournament.contains("ruka") -> 2.0
+                    jump.tournament.contains("nizny") -> 4.0
+                    jump.tournament.contains("planica") -> 8.0
+                    jump.tournament.contains("engelberg") -> 16.0
+                    jump.tournament.contains("oberstdorf") -> 128.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("gapa") -> {
+                when {
+                    jump.tournament.contains("wisla") -> 1.0
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 1.0
+                    jump.tournament.contains("planica") -> 1.0
+                    jump.tournament.contains("engelberg") -> 1.0
+                    jump.tournament.contains("oberstdorf") -> 8.0
+                    jump.tournament.contains("gapa") -> 16.0
                     else -> 0.0
                 }
             }

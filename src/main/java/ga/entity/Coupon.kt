@@ -42,13 +42,13 @@ data class Coupon(
     }
 
     fun getWinCash () : Double {
-//        return (contribution * 0.88) * getOdd()
-        return getOdd() * (contribution)
+        return (contribution * 0.88) * getOdd()
+//        return getOdd() * (contribution)
     }
 
     fun getWinCashAfterResults () : Double {
-//        return (contribution * 0.88) * getOddAfterResults()
-        return getOddAfterResults() * (contribution)
+        return (contribution * 0.88) * getOddAfterResults()
+//        return getOddAfterResults() * (contribution)
     }
 
     fun areBetsTheSame(other : Coupon)  : Boolean {

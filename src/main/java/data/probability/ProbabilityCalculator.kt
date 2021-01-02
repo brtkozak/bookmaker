@@ -63,8 +63,8 @@ class ProbabilityCalculator {
         val jumper2WinProbability = 1 - jumper1WinProbability
 
         // test
-        val name1 = "kubac"
-        val name2 = "zyla"
+        val name1 = "lindvik"
+        val name2 = "sato"
         if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)  ) {
             val x = 2
         }

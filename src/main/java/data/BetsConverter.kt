@@ -28,8 +28,8 @@ class BetsConverter {
         val result = mutableListOf<SingleBet>()
         var index = 0
         bets.forEach {
-                val bet1 = SingleBet(index++, it.name1, it.name2, it.odd1, it.book1Prob, it.my1Prob, it.value1, getBetResult(it.won))
-                val bet2 = SingleBet(index++, it.name2, it.name1, it.odd2, it.book2Prob, it.my2Prob, it.value2, getBetResult(it.won))
+                val bet1 = SingleBet(index++, it.name1, it.name2, it.odd1, it.book1Prob, it.my1Prob, it.value1, getBetResult(it.won, 1))
+                val bet2 = SingleBet(index++, it.name2, it.name1, it.odd2, it.book2Prob, it.my2Prob, it.value2, getBetResult(it.won, 2))
                 result.add(bet1)
                 result.add(bet2)
         }
@@ -37,10 +37,28 @@ class BetsConverter {
         return result
     }
 
-    private fun getBetResult(value : Int) : BetResult{
+//    private fun getBetResult(value : Int, jumper: Int) : BetResult{
+//        return when(value) {
+//            1 -> BetResult.Win
+//            2 -> BetResult.Lose
+//            else -> BetResult.Unknown
+//        }
+//    }
+
+    private fun getBetResult(value : Int, jumper: Int) : BetResult{
         return when(value) {
-            1 -> BetResult.Win
-            2 -> BetResult.Lose
+            1 ->  {
+                if(jumper == 1) {
+                    BetResult.Win
+                }
+                else BetResult.Lose
+            }
+            2 ->  {
+                if(jumper == 2) {
+                    BetResult.Win
+                }
+                else BetResult.Lose
+            }
             else -> BetResult.Unknown
         }
     }

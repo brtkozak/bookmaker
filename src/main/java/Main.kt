@@ -23,9 +23,9 @@ class Main {
         // COMMON
         val MIN_VALUE = 1.0
         val MAX_VALUE = 1.5
-        val MIN_SINGLE_BET_ODD = 1.4
+        val MIN_SINGLE_BET_ODD = 1.3
         val MAX_SINGLE_BET_ODD = 2.5
-        val ITERANTIONS = 100
+        val ITERANTIONS = 1000
         val POPULATION_SIZE = 100
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
@@ -68,7 +68,7 @@ class Main {
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
             singleBets = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }
-            if(index == 1) {
+            if(index == 9) {
                 val x = 2
             }
             return singleBets
@@ -77,34 +77,39 @@ class Main {
         fun simulateSystem() {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
-            for(i in 6 until eventsSize) {
+            val bets = mutableListOf<Int>()
+            for(i in 9 until eventsSize) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
                 AVAILABLE_BETS = chosenBets.toMutableList()
-                val algorithm = Algorithm(ITERANTIONS,
-                        POPULATION_SIZE,
-                        chosenBets,
-                        BasePopulationInitializer(),
-                        RiskMinimizationRater(),
-                        TournamentSelector(TOURNAMENT_SIZE),
-                        BaseCrosserWithRepeats(),
-                        listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
-                        LineChart())
-                val best = algorithm.run()
-//                val best = CouponsGroup()
-//                chosenBets.forEach {
-//                    val c = Coupon()
-//                    c.bets.add(it)
-//                    best.coupons.add(c)
-//                }
+//                val algorithm = Algorithm(ITERANTIONS,
+//                        POPULATION_SIZE,
+//                        chosenBets,
+//                        BasePopulationInitializer(),
+//                        ProportionalOddRater(),
+//                        TournamentSelector(TOURNAMENT_SIZE),
+//                        BaseCrosser(),
+//                        listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
+//                        LineChart())
+//                val best = algorithm.run()
+                val best = CouponsGroup()
+                chosenBets.forEach {
+                    val c = Coupon()
+                    c.bets.add(it)
+                    best.coupons.add(c)
+                }
                 best?.let {
                     gains.add(it.getGain())
+                    bets.add(it.coupons.sumBy { it.bets.size })
                 }
                 if(i == 5) {
                     val x =2
                 }
             }
             val totalGain = gains.sum()
+            bets.forEach {
+                println("bets: $it")
+            }
             gains.forEach {
                 println("Gain: $it")
             }
