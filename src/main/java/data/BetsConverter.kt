@@ -13,7 +13,7 @@ class BetsConverter {
         val bets = when(Main.MODE) {
             Main.Companion.Mode.Jump -> SkiJumpingBets.bets
             Main.Companion.Mode.WSki -> WomenAlpeinBets.bets
-            Main.Companion.Mode.MSki -> WomenAlpeinBets.bets
+            Main.Companion.Mode.MSki -> MenAlpineBets.bets
         }
         val betsDto = gson.fromJson(bets[betsIndex], BetsDto::class.java)
         val result = mutableListOf<Bet>()
@@ -93,6 +93,13 @@ class BetsConverter {
                 .replace("ż", "z")
                 .replace("á", "a")
                 .replace("gut behrami", "gut-behrami")
+                .replace("cochran siegle", "cochran-siegle")
+                .replace("innerhofer ch", "innerhofer c")
+                .replace("mair ch", "mair c")
+                .replace("nestvold haugen", "nestvold-haugen")
+                .replace("foss solevaag", "foss-solevaag")
+                .replace("st germain", "st-germain")
+                .replace("mckennis a.", "mckennis d.a.")
     }
 
     private fun getProbabilities(betDto: BetDto): Pair<Double, Double> {
@@ -110,6 +117,9 @@ class BetsConverter {
         bets.forEach { bet ->
             val probability = probabilities.firstOrNull {
                 (it.jumper1 == bet.name1 && it.jumper2 == bet.name2) || (it.jumper1 == bet.name2 && it.jumper2 == bet.name1)
+            }
+            if(probability == null){
+                val x = 2
             }
             probability?.let {
                 if (it.jumper1 == bet.name1 && it.jumper2 == bet.name2) {

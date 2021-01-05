@@ -113,7 +113,8 @@ class FixUtils {
                 }
             }
 
-            alreadyOnCoupons = alreadyOnCoupons.distinct() as MutableList<Int>
+            if(alreadyOnCoupons.isNotEmpty())
+                alreadyOnCoupons = alreadyOnCoupons.distinct() as MutableList<Int>
             alreadyOnCoupons.forEach { betId ->
                 val indexToRemove = availableBets.indexOf(availableBets.first { it.id == betId })
                 availableBets.removeAt(indexToRemove)

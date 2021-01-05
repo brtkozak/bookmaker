@@ -12,7 +12,7 @@ class ProbabilityCalculator {
 
     private var weights : Weights = when(Main.MODE){
         Main.Companion.Mode.Jump -> SkiJumpingWeights()
-        Main.Companion.Mode.MSki -> WomenAlpeinWeights()
+        Main.Companion.Mode.MSki -> MenAlpineSkiWeights()
         Main.Companion.Mode.WSki -> WomenAlpeinWeights()
     }
 
@@ -41,7 +41,7 @@ class ProbabilityCalculator {
 
         val mean = stats.mean
         val std = stats.standardDeviation
-        if (commonJumps < 0 || std == 0.0)
+        if (commonJumps < 5 || std == 0.0)
             return null
 
         val normalDistribution = NormalDistribution(mean, std)
@@ -63,8 +63,8 @@ class ProbabilityCalculator {
         val jumper2WinProbability = 1 - jumper1WinProbability
 
         // test
-        val name1 = "lindvik"
-        val name2 = "sato"
+        val name1 = "jansrud"
+        val name2 = "ford"
         if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)  ) {
             val x = 2
         }

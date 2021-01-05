@@ -1,6 +1,7 @@
 import chart.LineChart
 import data.BetsConverter
 import data.StatisticsConverter
+import data.entity.bets.MenAlpineBets
 import data.probability.ProbabilityCalculator
 import data.entity.bets.SingleBet
 import data.entity.bets.SkiJumpingBets
@@ -8,6 +9,7 @@ import data.entity.bets.WomenAlpeinBets
 import ga.*
 import ga.BasePopulationInitializer
 import ga.DoubleBetSwapMutator
+import ga.entity.Coupon
 import ga.entity.CouponsGroup
 import ga.equalprob.EqualProbRater
 import ga.propportionalodd.ProportionalOddRater
@@ -24,8 +26,8 @@ class Main {
         val MAX_VALUE = 1.5
         val MIN_SINGLE_BET_ODD = 1.3
         val MAX_SINGLE_BET_ODD = 2.5
-        val ITERANTIONS = 300
-        val POPULATION_SIZE = 35
+        val ITERANTIONS = 1000
+        val POPULATION_SIZE = 100
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
         val ELITE_COUNT : Int = if((POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() > 0) (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() else 1
@@ -67,8 +69,6 @@ class Main {
             val probabilities = calculator.getProbabilities(skiJumpingResults)
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
-//            singleBets = singleBets.filter { !it.name1.contains("geiger") && !it.name2.contains("geiger") }
-//            singleBets = singleBets.filter { !it.name1.contains("sato y") && !it.name2.contains("sato y") }
             singleBets = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
             if (index == 9) {
                 val x = 2
@@ -88,7 +88,7 @@ class Main {
                         POPULATION_SIZE,
                         chosenBets,
                         BasePopulationInitializer(),
-                        RiskMinimizationRater(),
+                        ProportionalOddRater(),
                         TournamentSelector(TOURNAMENT_SIZE),
                         BaseCrosser(),
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
@@ -123,7 +123,7 @@ class Main {
         fun setLastTournament (index : Int) {
             when(MODE) {
                 Mode.Jump -> SkiJumpingBets.setLastTournament(index)
-                Mode.MSki -> WomenAlpeinBets.setLastTournament(index)
+                Mode.MSki -> MenAlpineBets.setLastTournament(index)
                 Mode.WSki -> WomenAlpeinBets.setLastTournament(index)
             }
 
@@ -132,7 +132,7 @@ class Main {
         fun getEventsSize(): Int {
             return when(MODE) {
                 Mode.Jump -> SkiJumpingBets.bets.size
-                Mode.MSki -> WomenAlpeinBets.bets.size
+                Mode.MSki -> MenAlpineBets.bets.size
                 Mode.WSki -> WomenAlpeinBets.bets.size
             }
         }
@@ -140,15 +140,11 @@ class Main {
         fun modifyContributions(best: CouponsGroup?) {
             if(best == null)
                 return
-            val totalAmount : Double = best.coupons.size * 5.0
+            val totalAmount : Double = best.coupons.size * 100.0
             val totalProbs  = best.coupons.sumByDouble { it.getProb() }
             best.coupons.forEach {
                 it.contribution = ( (it.getProb()) / totalProbs) * totalAmount
             }
         }
     }
-
-
-
-
 }

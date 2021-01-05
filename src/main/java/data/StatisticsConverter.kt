@@ -10,13 +10,13 @@ class StatisticsConverter {
         val statisticsCount = when(Main.MODE) {
             Main.Companion.Mode.Jump -> SkiJumpingStatistics.wrapEventIndexToStatisticsIndex(eventIndex)
             Main.Companion.Mode.WSki -> WomenAlpeinStatistics.wrapEventIndexToStatisticsIndex(eventIndex)
-            Main.Companion.Mode.MSki -> WomenAlpeinStatistics.wrapEventIndexToStatisticsIndex(eventIndex)
+            Main.Companion.Mode.MSki -> MenAlpineStatistics.wrapEventIndexToStatisticsIndex(eventIndex)
         }
 
         val statistics = when(Main.MODE) {
             Main.Companion.Mode.Jump -> SkiJumpingStatistics.statistics
             Main.Companion.Mode.WSki -> WomenAlpeinStatistics.statistics
-            Main.Companion.Mode.MSki -> WomenAlpeinStatistics.statistics
+            Main.Companion.Mode.MSki -> MenAlpineStatistics.statistics
         }
 
         val result = SkiJumpingData(mutableListOf())
@@ -112,14 +112,16 @@ class StatisticsConverter {
                     it.name = newName
                 }
                 // change all names to format : last name and first letter of names
-                val temp = it.name.split(" ")
-                val lastName = temp[0]
-                var newName = "$lastName "
-                for (i in 1..temp.size - 1) {
-                    val firstLetter = temp[i][0]
-                    newName += "$firstLetter."
+                if(!it.name.contains("ZAMPA")) {
+                    val temp = it.name.split(" ")
+                    val lastName = temp[0]
+                    var newName = "$lastName "
+                    for (i in 1..temp.size - 1) {
+                        val firstLetter = temp[i][0]
+                        newName += "$firstLetter."
+                    }
+                    it.name = newName
                 }
-                it.name = newName
 
                 it.name = it.name
                         .toLowerCase()
