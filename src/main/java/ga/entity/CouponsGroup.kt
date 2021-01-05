@@ -27,6 +27,9 @@ data class CouponsGroup(
             }
         }
         gain -= getContribution()
+        if(gain < -1000.0) {
+            val x = 2
+        }
         return gain
     }
 }

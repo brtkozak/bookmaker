@@ -8,7 +8,7 @@ abstract class PopulationCrosser {
 
     protected abstract fun cross(parents: Pair<CouponsGroup, CouponsGroup>): Pair<CouponsGroup, CouponsGroup>
 
-    protected abstract fun fixPopulation(population: List<CouponsGroup>)
+    abstract fun fixPopulation(population: List<CouponsGroup>)
 
     fun crossPopulation(population: List<CouponsGroup>, force : Boolean): List<CouponsGroup> {
         val newPopulation = mutableListOf<CouponsGroup>()

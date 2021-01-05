@@ -23,15 +23,15 @@ class SkiJumpingWeights : Weights {
 
     private fun getTournamentWeight(jump: Jump): Double {
         var dayBonus = 1.0
-        if(jump.tournament.contains(SkiJumpingBets.lastTournament)) {
-            dayBonus = when(jump.day) {
-                1 -> 1.0
-                2 -> 1.5
-                3 -> 2.0
-                4 -> 2.5
-                else -> 1.0
-            }
-        }
+//        if(jump.tournament.contains(SkiJumpingBets.lastTournament)) {
+//            dayBonus = when(jump.day) {
+//                1 -> 1.0
+//                2 -> 1.5
+//                3 -> 2.0
+//                4 -> 2.5
+//                else -> 1.0
+//            }
+//        }
         return dayBonus * when {
             SkiJumpingBets.lastTournament.contains("nizny") -> {
                 when {
@@ -63,11 +63,11 @@ class SkiJumpingWeights : Weights {
             SkiJumpingBets.lastTournament.contains("oberstdorf") -> {
                 when {
                     jump.tournament.contains("wisla") -> 1.0
-                    jump.tournament.contains("ruka") -> 2.0
-                    jump.tournament.contains("nizny") -> 4.0
-                    jump.tournament.contains("planica") -> 8.0
-                    jump.tournament.contains("engelberg") -> 16.0
-                    jump.tournament.contains("oberstdorf") -> 128.0
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 1.0
+                    jump.tournament.contains("planica") -> 1.0
+                    jump.tournament.contains("engelberg") -> 4.0
+                    jump.tournament.contains("oberstdorf") -> 32.0
                     else -> 0.0
                 }
             }
@@ -80,6 +80,19 @@ class SkiJumpingWeights : Weights {
                     jump.tournament.contains("engelberg") -> 1.0
                     jump.tournament.contains("oberstdorf") -> 8.0
                     jump.tournament.contains("gapa") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("innsbruck") -> {
+                when {
+                    jump.tournament.contains("wisla") -> 1.0
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 1.0
+                    jump.tournament.contains("planica") -> 1.0
+                    jump.tournament.contains("engelberg") -> 2.0
+                    jump.tournament.contains("oberstdorf") -> 2.0
+                    jump.tournament.contains("gapa") -> 8.0
+                    jump.tournament.contains("innsbruck") -> 16.0
                     else -> 0.0
                 }
             }

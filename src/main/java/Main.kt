@@ -8,7 +8,6 @@ import data.entity.bets.WomenAlpeinBets
 import ga.*
 import ga.BasePopulationInitializer
 import ga.DoubleBetSwapMutator
-import ga.entity.Coupon
 import ga.entity.CouponsGroup
 import ga.equalprob.EqualProbRater
 import ga.propportionalodd.ProportionalOddRater
@@ -25,25 +24,26 @@ class Main {
         val MAX_VALUE = 1.5
         val MIN_SINGLE_BET_ODD = 1.3
         val MAX_SINGLE_BET_ODD = 2.5
-        val ITERANTIONS = 1000
-        val POPULATION_SIZE = 100
+        val ITERANTIONS = 300
+        val POPULATION_SIZE = 35
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
-        val ELITE_COUNT : Int = (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt()
+        val ELITE_COUNT : Int = if((POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() > 0) (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() else 1
         val MINIMALIZATION = true
         val CROSSING_PROBABLITY = 0.8
         val MUTATION_PROBABILITY = 0.2
         var AVAILABLE_BETS: MutableList<SingleBet> = mutableListOf()
-        var THE_SAME_BEST_ITERATIONS = ITERANTIONS/ 4
+        var THE_SAME_BEST_ITERATIONS = ITERANTIONS/ 2
         var THE_SAME_BEST_ITERATIONS_TIMES = 4
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val PROB_MEAN = 1 / 4.0
+        val PROB_MEAN = 1 / 3.0
 
         // PROPORTIONAL RISK ONLY
-        val BASE_ODD = 1.4
-        val ODD_STEP = 0.3
+        val BASE_ODD = 1.7
+        val ODD_STEP = 0.4
+        var PROPORTIONAL_IN_USE = false
         // CONST
 
         val MODE = Mode.Jump
@@ -67,8 +67,10 @@ class Main {
             val probabilities = calculator.getProbabilities(skiJumpingResults)
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
-            singleBets = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }
-            if(index == 9) {
+//            singleBets = singleBets.filter { !it.name1.contains("geiger") && !it.name2.contains("geiger") }
+//            singleBets = singleBets.filter { !it.name1.contains("sato y") && !it.name2.contains("sato y") }
+            singleBets = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
+            if (index == 9) {
                 val x = 2
             }
             return singleBets
@@ -78,26 +80,28 @@ class Main {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            for(i in 9 until eventsSize) {
+            for(i in 11 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
                 AVAILABLE_BETS = chosenBets.toMutableList()
-//                val algorithm = Algorithm(ITERANTIONS,
-//                        POPULATION_SIZE,
-//                        chosenBets,
-//                        BasePopulationInitializer(),
-//                        ProportionalOddRater(),
-//                        TournamentSelector(TOURNAMENT_SIZE),
-//                        BaseCrosser(),
-//                        listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
-//                        LineChart())
-//                val best = algorithm.run()
-                val best = CouponsGroup()
-                chosenBets.forEach {
-                    val c = Coupon()
-                    c.bets.add(it)
-                    best.coupons.add(c)
-                }
+                val algorithm = Algorithm(ITERANTIONS,
+                        POPULATION_SIZE,
+                        chosenBets,
+                        BasePopulationInitializer(),
+                        RiskMinimizationRater(),
+                        TournamentSelector(TOURNAMENT_SIZE),
+                        BaseCrosser(),
+                        listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
+                        LineChart())
+                val best = algorithm.run()
+//                val best = CouponsGroup()
+//                chosenBets.forEach {
+//                    val c = Coupon()
+//                    c.bets.add(it)
+//                    best.coupons.add(c)
+//                }
+                if(PROPORTIONAL_IN_USE)
+                    modifyContributions(best)
                 best?.let {
                     gains.add(it.getGain())
                     bets.add(it.coupons.sumBy { it.bets.size })
@@ -132,7 +136,19 @@ class Main {
                 Mode.WSki -> WomenAlpeinBets.bets.size
             }
         }
+
+        fun modifyContributions(best: CouponsGroup?) {
+            if(best == null)
+                return
+            val totalAmount : Double = best.coupons.size * 5.0
+            val totalProbs  = best.coupons.sumByDouble { it.getProb() }
+            best.coupons.forEach {
+                it.contribution = ( (it.getProb()) / totalProbs) * totalAmount
+            }
+        }
     }
+
+
 
 
 }

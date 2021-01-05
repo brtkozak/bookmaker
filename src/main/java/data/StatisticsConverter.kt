@@ -19,19 +19,27 @@ class StatisticsConverter {
             Main.Companion.Mode.MSki -> WomenAlpeinStatistics.statistics
         }
 
-        val first = gson.fromJson(statistics[0], SkiJumpingData::class.java)
-        for(i in 1 until statisticsCount) {
+        val result = SkiJumpingData(mutableListOf())
+        for(i in 0 until statisticsCount) {
             val data = gson.fromJson(statistics[i], SkiJumpingData::class.java)
-            first.tournaments.addAll(data.tournaments)
+            result.tournaments.addAll(data.tournaments)
         }
 
-        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO OSTATNIE 5, jedne zaowdy maja srednio 8 serii wiec 8 * 5
-        val temp  = first.tournaments.takeLast(30)
-        first.tournaments.clear()
-        first.tournaments.addAll(temp)
-        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO OSTATNIE 5
+        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO KLIKA OSTATNICH TURNIEJI
+        val temp  = result.tournaments.reversed()
+        val tempResult = mutableListOf<Tournament>()
+        var currentTournaments = 0
+        val maxTournaments = 4
+        temp.forEach { tournament ->
+            if (!tempResult.any { it.name.dropLast(3) == tournament.name.dropLast(3) }) {
+                currentTournaments++
+            }
+            if (currentTournaments <= maxTournaments)
+                tempResult.add(tournament)
+        }
+        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO KLIKA OSTATNICH TURNIEJI
 
-        return first
+        return SkiJumpingData(tempResult)
     }
 
     fun getJumpersResults(skiJumpingData: SkiJumpingData): List<JumperResults> {

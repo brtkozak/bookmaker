@@ -65,6 +65,7 @@ class Algorithm(
             populationMutators.forEach {
                 population = it.mutatePopulation(population, forceOperators) as MutableList<CouponsGroup>
             }
+            populationCrosser.fixPopulation(population)
             population.addAll(elite)
             populationRater.ratePopulation(population)
             iteration++

@@ -6,6 +6,10 @@ import kotlin.math.abs
 
 class ProportionalOddRater : PopulationRater() {
 
+    init {
+        Main.PROPORTIONAL_IN_USE = true
+     }
+
     override fun rateCouponsGroup(couponsGroup: CouponsGroup) {
         couponsGroup.coupons.sortBy { it.getOdd() }
         val baseOdd = Main.BASE_ODD
