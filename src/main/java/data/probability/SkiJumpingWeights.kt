@@ -96,6 +96,20 @@ class SkiJumpingWeights : Weights {
                     else -> 0.0
                 }
             }
+            SkiJumpingBets.lastTournament.contains("bischofshofen") -> {
+                when {
+                    jump.tournament.contains("wisla") -> 1.0
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 1.0
+                    jump.tournament.contains("planica") -> 1.0
+                    jump.tournament.contains("engelberg") -> 1.0
+                    jump.tournament.contains("oberstdorf") -> 1.0
+                    jump.tournament.contains("gapa") -> 2.0
+                    jump.tournament.contains("innsbruck") -> 8.0
+                    jump.tournament.contains("bischofshofen") -> 16.0
+                    else -> 0.0
+                }
+            }
             else -> return 0.0
         }
     }

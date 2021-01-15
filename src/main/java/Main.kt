@@ -26,8 +26,8 @@ class Main {
         val MAX_VALUE = 1.5
         val MIN_SINGLE_BET_ODD = 1.3
         val MAX_SINGLE_BET_ODD = 2.5
-        val ITERANTIONS = 1000
-        val POPULATION_SIZE = 100
+        val ITERANTIONS = 300
+        val POPULATION_SIZE = 30
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
         val ELITE_COUNT : Int = if((POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() > 0) (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() else 1
@@ -80,7 +80,7 @@ class Main {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            for(i in 11 until eventsSize ) {
+            for(i in 12 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
                 AVAILABLE_BETS = chosenBets.toMutableList()
@@ -88,7 +88,7 @@ class Main {
                         POPULATION_SIZE,
                         chosenBets,
                         BasePopulationInitializer(),
-                        ProportionalOddRater(),
+                        RiskMinimizationRater(),
                         TournamentSelector(TOURNAMENT_SIZE),
                         BaseCrosser(),
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
