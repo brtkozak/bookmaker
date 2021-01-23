@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" afterDir="false" />
-    </list>
+    <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,6 +227,7 @@
       <workItem from="1611072194871" duration="538000" />
       <workItem from="1611087405218" duration="277000" />
       <workItem from="1611155701581" duration="597000" />
+      <workItem from="1611303024197" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="risk minimization">
       <created>1607527506833</created>
@@ -294,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610694998244</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="statistics update">
+      <created>1611303084457</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611303084457</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,11 +365,11 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="483" y="53" key="#xdebugger.evaluate/0.23.1440.812@0.23.1440.812" timestamp="1607965735489" />
-    <state x="404" y="65" key="CommitChangelistDialog2" timestamp="1610694997849">
+    <state x="404" y="65" key="CommitChangelistDialog2" timestamp="1611303083901">
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="404" y="47" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1609584765742" />
-    <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1610694997849" />
+    <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1611303083901" />
     <state x="1979" y="-8" key="CommitChangelistDialog2/0.23.1440.812/1440.-63.1920.1057@1440.-63.1920.1057" timestamp="1609874228261" />
     <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812@0.23.1440.812" timestamp="1609584811645" />
     <state x="1979" y="35" key="CommitChangelistDialog2/0.23.1440.877/1440.-76.1920.992@1440.-76.1920.992" timestamp="1607527560548" />
@@ -525,10 +530,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="570" y="364" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1608101816420" />
-    <state x="420" y="201" key="Vcs.Push.Dialog.v2" timestamp="1610695000349">
+    <state x="420" y="201" key="Vcs.Push.Dialog.v2" timestamp="1611303086645">
       <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1610695000349" />
+    <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1611303086645" />
     <state x="2000" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.812/1440.-63.1920.1057@1440.-63.1920.1057" timestamp="1609874230392" />
     <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1609584817835" />
     <state x="2000" y="141" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-76.1920.992@1440.-76.1920.992" timestamp="1607527568764" />
