@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingStatistics.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +237,8 @@
       <workItem from="1611406535673" duration="693000" />
       <workItem from="1611492628165" duration="87000" />
       <workItem from="1611495075700" duration="86000" />
-      <workItem from="1611680685074" duration="6964000" />
+      <workItem from="1611680685074" duration="7229000" />
+      <workItem from="1611758080024" duration="2844000" />
     </task>
     <task id="LOCAL-00001" summary="risk minimization">
       <created>1607527506833</created>
@@ -321,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611495099096</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="statistics update">
+      <created>1611689417933</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1611689417933</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,14 +397,14 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="483" y="53" key="#xdebugger.evaluate/0.23.1440.812@0.23.1440.812" timestamp="1607965735489" />
-    <state x="404" y="68" key="CommitChangelistDialog2" timestamp="1611495098578">
+    <state x="404" y="68" key="CommitChangelistDialog2" timestamp="1611689417615">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="404" y="47" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1609584765742" />
     <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1611303083901" />
     <state x="1979" y="-8" key="CommitChangelistDialog2/0.23.1440.812/1440.-63.1920.1057@1440.-63.1920.1057" timestamp="1609874228261" />
     <state x="404" y="65" key="CommitChangelistDialog2/0.23.1440.812@0.23.1440.812" timestamp="1611406615428" />
-    <state x="404" y="68" key="CommitChangelistDialog2/0.23.1440.877/1440.-63.1920.992@0.23.1440.877" timestamp="1611495098578" />
+    <state x="404" y="68" key="CommitChangelistDialog2/0.23.1440.877/1440.-63.1920.992@0.23.1440.877" timestamp="1611689417615" />
     <state x="1979" y="35" key="CommitChangelistDialog2/0.23.1440.877/1440.-76.1920.992@1440.-76.1920.992" timestamp="1607527560548" />
     <state width="464" height="646" key="DebuggerActiveHint" timestamp="1609326512785">
       <screen x="0" y="0" width="1440" height="900" />
@@ -553,13 +563,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="570" y="364" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1608101816420" />
-    <state x="420" y="215" key="Vcs.Push.Dialog.v2" timestamp="1611495115225">
+    <state x="420" y="215" key="Vcs.Push.Dialog.v2" timestamp="1611689423655">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1611303086645" />
     <state x="2000" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.812/1440.-63.1920.1057@1440.-63.1920.1057" timestamp="1609874230392" />
     <state x="420" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1611406617424" />
-    <state x="420" y="215" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-63.1920.992@0.23.1440.877" timestamp="1611495115225" />
+    <state x="420" y="215" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-63.1920.992@0.23.1440.877" timestamp="1611689423655" />
     <state x="2000" y="141" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-76.1920.992@1440.-76.1920.992" timestamp="1607527568764" />
     <state width="960" height="528" key="XDebugger.FullValuePopup" timestamp="1607166166697">
       <screen x="1440" y="-76" width="1920" height="1057" />
@@ -596,13 +606,13 @@
     </state>
     <state x="2179" y="160" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.23.1440.812/1440.-76.1920.1057@1440.-76.1920.1057" timestamp="1607438848432" />
     <state x="554" y="204" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.23.1440.812@0.23.1440.812" timestamp="1607496246211" />
-    <state x="385" y="170" width="671" height="733" key="search.everywhere.popup" timestamp="1611688493949">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup" timestamp="1611760961882">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="1953" y="95" width="894" height="900" key="search.everywhere.popup/0.0.1440.900/1440.-86.1920.1080@1440.-86.1920.1080" timestamp="1609921405289" />
     <state x="385" y="151" width="670" height="750" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609830715145" />
     <state x="513" y="181" width="894" height="900" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1608469344467" />
-    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1611680921074" />
+    <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812/1440.-63.1920.1057@0.23.1440.812" timestamp="1611760961882" />
     <state x="1953" y="114" width="894" height="880" key="search.everywhere.popup/0.23.1440.812/1440.-63.1920.1057@1440.-63.1920.1057" timestamp="1609921262339" />
     <state x="1953" y="101" width="894" height="880" key="search.everywhere.popup/0.23.1440.812/1440.-76.1920.1057@1440.-76.1920.1057" timestamp="1607451991488" />
     <state x="385" y="159" width="670" height="676" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1609774904040" />
