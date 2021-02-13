@@ -80,7 +80,7 @@ class Main {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            for(i in 12 until eventsSize ) {
+            for(i in 0 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
                 AVAILABLE_BETS = chosenBets.toMutableList()
@@ -93,13 +93,13 @@ class Main {
                         BaseCrosser(),
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
                         LineChart())
-                val best = algorithm.run()
-//                val best = CouponsGroup()
-//                chosenBets.forEach {
-//                    val c = Coupon()
-//                    c.bets.add(it)
-//                    best.coupons.add(c)
-//                }
+//                val best = algorithm.run()
+                val best = CouponsGroup()
+                chosenBets.forEach {
+                    val c = Coupon()
+                    c.bets.add(it)
+                    best.coupons.add(c)
+                }
                 if(PROPORTIONAL_IN_USE)
                     modifyContributions(best)
                 best?.let {
