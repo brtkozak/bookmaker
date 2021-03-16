@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="statistics update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ga/Algorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/Algorithm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingStatistics.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ga/TournamentSelector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/TournamentSelector.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ga/rsikminimization/RiskMinimizationRater.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/rsikminimization/RiskMinimizationRater.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Algorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +50,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="dfs_optimization" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -57,7 +60,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
