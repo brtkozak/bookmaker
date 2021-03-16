@@ -77,7 +77,7 @@ class Algorithm(
         drawCharts()
 
         val best = population.minByOrNull { it.rate }
-//        drawGainChart(best)
+        drawGainChart(best)
         printExpectedValue(best)
 
         val probs = mutableListOf<Double>()

@@ -5,7 +5,7 @@ import kotlin.random.Random
 
 class TournamentSelector(val tournamentSize: Int) : PopulationSelector {
 
-    override fun select(population: List<CouponsGroup>): List<CouponsGroup> {
+    overridce fun select(population: List<CouponsGroup>): List<CouponsGroup> {
 //        val newPopulation = EliteSelector.selectElite(population)
         val newPopulation = mutableListOf<CouponsGroup>()
         val temp = population.toMutableList()

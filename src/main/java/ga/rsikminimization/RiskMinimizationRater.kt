@@ -16,7 +16,7 @@ class RiskMinimizationRater : PopulationRater() {
     }
 
     override fun rateCouponsGroup(couponsGroup: CouponsGroup) {
-        Main.modifyContributions(couponsGroup)
+//        Main.modifyContributions(couponsGroup)
         this.couponsGroup = couponsGroup.copy()
         routes.clear()
         routes.addAll(DfsTree.buildTree(couponsGroup))

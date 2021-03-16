@@ -4,58 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="statistics update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmaker.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/bookmaker.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/bookmaker.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ga/Algorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/Algorithm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ga/TournamentSelector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/TournamentSelector.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ga/rsikminimization/RiskMinimizationRater.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/rsikminimization/RiskMinimizationRater.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chart/ChartDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chart/ChartDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chart/ChartDrawer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chart/ChartDrawer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chart/ChartUtils$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chart/ChartUtils$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chart/ChartUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chart/ChartUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chart/LineChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chart/LineChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chart/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chart/Series.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/BetsConverter$getSingeBets$$inlined$sortByDescending$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/BetsConverter$getSingeBets$$inlined$sortByDescending$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/BetsConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/BetsConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/StatisticsConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/StatisticsConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/bets/Bet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/bets/Bet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/bets/BetDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/bets/BetDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/bets/BetsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/bets/BetsDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/bets/SingleBet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/bets/SingleBet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Jump.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/JumperResults.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/JumperResults.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Probability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Probability.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/SkiJumpingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/SkiJumpingData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Tournament.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Tournament.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/TournamentType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/TournamentType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/Algorithm$PopulationStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Algorithm$PopulationStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/Algorithm$getPopulationStatistics$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Algorithm$getPopulationStatistics$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ga/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/EliteSelector$Companion$selectElite$$inlined$sortByDescending$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/EliteSelector$Companion$selectElite$$inlined$sortByDescending$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/EliteSelector$Companion$selectElite$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/EliteSelector$Companion$selectElite$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/EliteSelector$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/EliteSelector$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/EliteSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/EliteSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationCrosser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationCrosser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationMutator$mutatePopulation$$inlined$sortBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationMutator$mutatePopulation$$inlined$sortBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationMutator$mutatePopulation$$inlined$sortByDescending$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationMutator$mutatePopulation$$inlined$sortByDescending$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationMutator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationMutator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationRater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationRater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/PopulationSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/PopulationSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/Printer$Companion$printPopulationStatistics$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Printer$Companion$printPopulationStatistics$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/Printer$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Printer$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Printer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/TournamentSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/TournamentSelector.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/entity/CouponsGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/entity/CouponsGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/equalprob/EqualProbRater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/equalprob/EqualProbRater.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +74,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -128,7 +87,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -381,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611689417933</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="statistics update">
+      <created>1613210284030</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1613210284030</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,15 +374,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="statistics update" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ga/entity/CouponsGroup.kt</url>
-          <line>30</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((java.util.ArrayList)((CouponsGroup)best).coupons).get(0)" custom="ga.entity.CouponsGroup,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
