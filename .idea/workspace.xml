@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="statistics update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/WinConverter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/BetsConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/BetsConverter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/SkiJumpingBets.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingStatistics.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ga/TournamentSelector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/TournamentSelector.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +42,9 @@
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Python Script" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -349,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613210284030</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="statistics update">
+      <created>1615925297452</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1615925297452</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

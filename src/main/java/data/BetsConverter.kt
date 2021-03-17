@@ -63,7 +63,7 @@ class BetsConverter {
         }
     }
 
-    private fun getBet(betDto: BetDto): Bet {
+    fun getBet(betDto: BetDto): Bet {
         val names = getNames(betDto)
         val probabilities = getProbabilities(betDto)
         return Bet(name1 = names.first, name2 = names.second, odd1 = betDto.odd1.toDouble(), odd2 = betDto.odd2.toDouble(), book1Prob = probabilities.first, book2Prob = probabilities.second, won = betDto.won)
