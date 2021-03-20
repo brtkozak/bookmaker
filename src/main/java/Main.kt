@@ -106,9 +106,6 @@ class Main {
                     gains.add(it.getGain())
                     bets.add(it.coupons.sumBy { it.bets.size })
                 }
-                if(i == 5) {
-                    val x =2
-                }
             }
             val totalGain = gains.sum()
             bets.forEach {

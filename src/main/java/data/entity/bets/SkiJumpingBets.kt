@@ -36,7 +36,36 @@ class SkiJumpingBets  {
         val zakopane2 = "{\"bets\":[{\"names\":\"Granerud H.E. - Stękała A.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Granerud H.E. - Lanisek A.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Granerud H.E. - Kobayashi R.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Granerud H.E. - Pavlovcic B.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Granerud H.E. - Lindvik M.\",\"odd1\":\"1.32\",\"odd2\":\"3.09\",\"won\":1},{\"names\":\"Stękała A. - Lanisek A.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":2},{\"names\":\"Lanisek A. - Kobayashi R.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":1},{\"names\":\"Lanisek A. - Pavlovcic B.\",\"odd1\":\"1.80\",\"odd2\":\"1.90\",\"won\":1},{\"names\":\"Lanisek A. - Lindvik M.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Lanisek A. - Kraft S.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":1},{\"names\":\"Kobayashi R. - Lindvik M.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":2},{\"names\":\"Kobayashi R. - Kraft S.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":2},{\"names\":\"Kobayashi R. - Żyła P.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Kobayashi R. - Sato Y.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":1},{\"names\":\"Pavlovcic B. - Lindvik M.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":2},{\"names\":\"Pavlovcic B. - Żyła P.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Pavlovcic B. - Kubacki D.\",\"odd1\":\"1.35\",\"odd2\":\"2.94\",\"won\":2},{\"names\":\"Lindvik M. - Johansson R.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":2},{\"names\":\"Lindvik M. - Tande D.A.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":1},{\"names\":\"Lindvik M. - Stoch K.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Johansson R. - Żyła P.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":1},{\"names\":\"Johansson R. - Tande D.A.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":1},{\"names\":\"Johansson R. - Kubacki D.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Kraft S. - Sato Y.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Kraft S. - Stoch K.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Kraft S. - Eisenbichler M.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":1},{\"names\":\"Żyła P. - Kubacki D.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Żyła P. - Stoch K.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":2},{\"names\":\"Żyła P. - Paschke P.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":2},{\"names\":\"Tande D.A. - Kubacki D.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":2},{\"names\":\"Tande D.A. - Sato Y.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Kubacki D. - Stoch K.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":1},{\"names\":\"Kubacki D. - Eisenbichler M.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":1},{\"names\":\"Kubacki D. - Huber D.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":1},{\"names\":\"Sato Y. - Huber D.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Sato Y. - Aschenwald P.\",\"odd1\":\"1.20\",\"odd2\":\"4.04\",\"won\":2},{\"names\":\"Stoch K. - Eisenbichler M.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":2},{\"names\":\"Stoch K. - Paschke P.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Stoch K. - Huber D.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":2},{\"names\":\"Eisenbichler M. - Paschke P.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Eisenbichler M. - Nazarov M.\",\"odd1\":\"1.26\",\"odd2\":\"3.48\",\"won\":1},{\"names\":\"Paschke P. - Huber D.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":2},{\"names\":\"Paschke P. - Aschenwald P.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":2},{\"names\":\"Huber D. - Prevc D.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Aschenwald P. - Sato K.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Aschenwald P. - Nazarov M.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":2},{\"names\":\"Prevc D. - Geiger K.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":1},{\"names\":\"Sato K. - Nakamura N.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Nazarov M. - Ammann S.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":1},{\"names\":\"Geiger K. - Forfang J.A.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":2},{\"names\":\"Nakamura N. - Wolny J.\",\"odd1\":\"1.30\",\"odd2\":\"3.21\",\"won\":1},{\"names\":\"Ammann S. - Forfang J.A.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":2},{\"names\":\"Zajc T. - Wolny J.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":2},{\"names\":\"Klimov E. - Bartol T.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Hayboeck M. - Jelar Z.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Deschwanden G. - Boyd Clowes M.\",\"odd1\":\"1.15\",\"odd2\":\"4.73\",\"won\":1},{\"names\":\"Wolny J. - Murańka K.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Wolny J. - Wąsek P.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":1},{\"names\":\"Murańka K. - Wąsek P.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Wąsek P. - Kornilov D.\",\"odd1\":\"1.72\",\"odd2\":\"2.00\",\"won\":2},{\"names\":\"Hamann M. - Schmid C.\",\"odd1\":\"1.30\",\"odd2\":\"3.21\",\"won\":1}]}"
         val rasnov1 = "{\"bets\":[{\"names\":\"Granerud H.E. - Kubacki D.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":2},{\"names\":\"Granerud H.E. - Eisenbichler M.\",\"odd1\":\"1.33\",\"odd2\":\"3.04\",\"won\":1},{\"names\":\"Granerud H.E. - Johansson R.\",\"odd1\":\"1.27\",\"odd2\":\"3.41\",\"won\":2},{\"names\":\"Kubacki D. - Eisenbichler M.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":1},{\"names\":\"Kubacki D. - Johansson R.\",\"odd1\":\"1.63\",\"odd2\":\"2.14\",\"won\":1},{\"names\":\"Kubacki D. - Stoch K.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":2},{\"names\":\"Kubacki D. - Żyła P.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Eisenbichler M. - Johansson R.\",\"odd1\":\"1.86\",\"odd2\":\"1.84\",\"won\":2},{\"names\":\"Eisenbichler M. - Stoch K.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":2},{\"names\":\"Eisenbichler M. - Żyła P.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":2},{\"names\":\"Eisenbichler M. - Geiger K.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Johansson R. - Stoch K.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":2},{\"names\":\"Johansson R. - Żyła P.\",\"odd1\":\"1.36\",\"odd2\":\"2.89\",\"won\":1},{\"names\":\"Johansson R. - Geiger K.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":2},{\"names\":\"Stoch K. - Żyła P.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":1},{\"names\":\"Stoch K. - Geiger K.\",\"odd1\":\"1.55\",\"odd2\":\"2.29\",\"won\":1},{\"names\":\"Stoch K. - Lindvik M.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Stoch K. - Stękała A.\",\"odd1\":\"1.40\",\"odd2\":\"2.73\",\"won\":1},{\"names\":\"Żyła P. - Geiger K.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":2},{\"names\":\"Żyła P. - Lindvik M.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":1},{\"names\":\"Żyła P. - Kobayashi R.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Żyła P. - Tande D.A.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":1},{\"names\":\"Żyła P. - Stękała A.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":1},{\"names\":\"Geiger K. - Lindvik M.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Geiger K. - Kobayashi R.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":2},{\"names\":\"Geiger K. - Tande D.A.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Geiger K. - Stękała A.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":1},{\"names\":\"Lindvik M. - Kobayashi R.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":2},{\"names\":\"Lindvik M. - Tande D.A.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":2},{\"names\":\"Lindvik M. - Stękała A.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":1},{\"names\":\"Kobayashi R. - Tande D.A.\",\"odd1\":\"2.03\",\"odd2\":\"1.70\",\"won\":1},{\"names\":\"Kobayashi R. - Stękała A.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Kobayashi R. - Paschke P.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":1},{\"names\":\"Tande D.A. - Stękała A.\",\"odd1\":\"1.75\",\"odd2\":\"1.96\",\"won\":1},{\"names\":\"Stękała A. - Paschke P.\",\"odd1\":\"1.65\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Paschke P. - Sato Y.\",\"odd1\":\"1.52\",\"odd2\":\"2.36\",\"won\":1},{\"names\":\"Sato Y. - Deschwanden G.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":2},{\"names\":\"Sato Y. - Zografski V.\",\"odd1\":\"1.63\",\"odd2\":\"2.14\",\"won\":2},{\"names\":\"Deschwanden G. - Zografski V.\",\"odd1\":\"1.70\",\"odd2\":\"2.03\",\"won\":1},{\"names\":\"Murańka K. - Schmid C.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":2},{\"names\":\"Murańka K. - Wolny J.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":1},{\"names\":\"Murańka K. - Wąsek P.\",\"odd1\":\"1.45\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Schmid C. - Sato K.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Schmid C. - Wolny J.\",\"odd1\":\"1.60\",\"odd2\":\"2.19\",\"won\":1},{\"names\":\"Wolny J. - Wąsek P.\",\"odd1\":\"1.50\",\"odd2\":\"2.41\",\"won\":1},{\"names\":\"Ammann S. - Hamann M.\",\"odd1\":\"1.85\",\"odd2\":\"1.85\",\"won\":2}]}"
 
-        val bets = listOf(nizny1, nizny2, planica1, planica2, planica3, engelberg1, engelberg2, obersdorf1, gapaK, innsbruckK, innsbruck1, bischofshofenK, bischofshofen1)
+        val bets = listOf(
+                nizny1,
+                nizny2,
+                planica1,
+                planica2,
+                planica3,
+                engelberg1,
+                engelberg2,
+                obersdorf1,
+                gapaK,
+                innsbruckK,
+                innsbruck1,
+                bischofshofenK,
+                bischofshofen1,
+                titiseK,
+                titise1,
+                titise2,
+                zakopaneK,
+                zakopane2,
+                lahti1,
+                lahti2,
+                willingenK,
+                willingen1,
+                willingen2,
+                klingenthal1,
+                klingenthal2,
+                zakopane1,
+                zakopane2,
+                rasnov1)
+
         var lastTournament = "nizny"
 
         fun setLastTournament(index : Int) {
@@ -54,6 +83,21 @@ class SkiJumpingBets  {
                 10 -> lastTournament = "innsbruck"
                 11 -> lastTournament = "innsbruck"
                 12 -> lastTournament = "bischofshofen"
+                13 -> lastTournament = "titise"
+                14 -> lastTournament = "titise"
+                15 -> lastTournament = "titise"
+                16 -> lastTournament = "zakopane"
+                17 -> lastTournament = "zakopane"
+                18 -> lastTournament = "zakopane"
+                19 -> lastTournament = "lahti"
+                20 -> lastTournament = "lahti"
+                21 -> lastTournament = "willingen"
+                22 -> lastTournament = "willingen"
+                23 -> lastTournament = "klingenthal"
+                24 -> lastTournament = "klingenthal"
+                25 -> lastTournament = "zakopane"
+                26 -> lastTournament = "zakopane"
+                27 -> lastTournament = "rasnov"
             }
         }
     }

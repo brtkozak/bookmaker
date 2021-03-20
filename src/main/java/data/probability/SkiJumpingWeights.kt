@@ -110,6 +110,92 @@ class SkiJumpingWeights : Weights {
                     else -> 0.0
                 }
             }
+            SkiJumpingBets.lastTournament.contains("titise") -> {
+                when {
+                    jump.tournament.contains("ruka") -> 1.0
+                    jump.tournament.contains("nizny") -> 1.0
+                    jump.tournament.contains("planica") -> 1.0
+                    jump.tournament.contains("engelberg") -> 1.0
+                    jump.tournament.contains("oberstdorf") -> 1.0
+                    jump.tournament.contains("gapa") -> 1.0
+                    jump.tournament.contains("innsbruck") -> 2.0
+                    jump.tournament.contains("bischofshofen") -> 8.0
+                    jump.tournament.contains("titise") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("zakopane") -> {
+                when {
+                    jump.tournament.contains("engelberg") -> 1.0
+                    jump.tournament.contains("oberstdorf") -> 1.0
+                    jump.tournament.contains("gapa") -> 1.0
+                    jump.tournament.contains("innsbruck") -> 1.0
+                    jump.tournament.contains("bischofshofen") -> 2.0
+                    jump.tournament.contains("titise") -> 8.0
+                    jump.tournament.contains("zakopane") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("lahti") -> {
+                when {
+                    jump.tournament.contains("oberstdorf") -> 1.0
+                    jump.tournament.contains("gapa") -> 1.0
+                    jump.tournament.contains("innsbruck") -> 1.0
+                    jump.tournament.contains("bischofshofen") -> 1.0
+                    jump.tournament.contains("titise") -> 2.0
+                    jump.tournament.contains("zakopane") -> 8.0
+                    jump.tournament.contains("lahti") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("willingen") -> {
+                when {
+                    jump.tournament.contains("gapa") -> 1.0
+                    jump.tournament.contains("innsbruck") -> 1.0
+                    jump.tournament.contains("bischofshofen") -> 1.0
+                    jump.tournament.contains("titise") -> 1.0
+                    jump.tournament.contains("zakopane") -> 2.0
+                    jump.tournament.contains("lahti") -> 8.0
+                    jump.tournament.contains("willingen") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("klingenthal") -> {
+                when {
+                    jump.tournament.contains("innsbruck") -> 1.0
+                    jump.tournament.contains("bischofshofen") -> 1.0
+                    jump.tournament.contains("titise") -> 1.0
+                    jump.tournament.contains("zakopane") -> 1.0
+                    jump.tournament.contains("lahti") -> 2.0
+                    jump.tournament.contains("willingen") -> 8.0
+                    jump.tournament.contains("klingenthal") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("zakopane") -> {
+                when {
+                    jump.tournament.contains("bischofshofen") -> 1.0
+                    jump.tournament.contains("titise") -> 1.0
+                    jump.tournament.contains("zakopane") -> 1.0
+                    jump.tournament.contains("lahti") -> 1.0
+                    jump.tournament.contains("willingen") -> 2.0
+                    jump.tournament.contains("klingenthal") -> 8.0
+                    jump.tournament.contains("zakopane") -> 16.0
+                    else -> 0.0
+                }
+            }
+            SkiJumpingBets.lastTournament.contains("rasnov") -> {
+                when {
+                    jump.tournament.contains("titise") -> 1.0
+                    jump.tournament.contains("zakopane") -> 1.0
+                    jump.tournament.contains("lahti") -> 1.0
+                    jump.tournament.contains("willingen") -> 1.0
+                    jump.tournament.contains("klingenthal") -> 2.0
+                    jump.tournament.contains("zakopane") -> 8.0
+                    jump.tournament.contains("rasnov") -> 16.0
+                    else -> 0.0
+                }
+            }
             else -> return 0.0
         }
     }
