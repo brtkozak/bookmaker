@@ -3,6 +3,7 @@ package ga
 import chart.*
 import data.entity.bets.SingleBet
 import ga.entity.CouponsGroup
+import utils.StackStrategy
 
 class Algorithm(
         val iterations: Int,
@@ -13,7 +14,8 @@ class Algorithm(
         val populationSelector: PopulationSelector,
         val populationCrosser: PopulationCrosser,
         val populationMutators: List<PopulationMutator>,
-        val chartDrawer: ChartDrawer) {
+        val chartDrawer: ChartDrawer,
+        val stackStrategy: StackStrategy) {
 
     var population = mutableListOf<CouponsGroup>()
 

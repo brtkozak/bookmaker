@@ -15,6 +15,22 @@ data class CouponsGroup(
         return copy
     }
 
+    fun getTotalProb() : Double {
+        var resut = 1.0
+        coupons.forEach {
+            resut *= it.getProb()
+        }
+        return resut
+    }
+
+    fun getTotalOdd() : Double {
+        var resut = 1.0
+        coupons.forEach {
+            resut *= it.getOdd()
+        }
+        return resut
+    }
+
     fun getContribution() : Double {
         return coupons.sumByDouble { it.contribution }
     }
@@ -27,9 +43,6 @@ data class CouponsGroup(
             }
         }
         gain -= getContribution()
-        if(gain < -1000.0) {
-            val x = 2
-        }
         return gain
     }
 }

@@ -5,8 +5,9 @@ import ga.dfstree.DfsTree
 import ga.dfstree.Node
 import ga.dfstree.Result
 import ga.entity.CouponsGroup
+import utils.StackStrategy
 
-class RiskMinimizationRater : PopulationRater() {
+class RiskMinimizationRater(private val stackStrategy: StackStrategy) : PopulationRater() {
 
     val routes = mutableListOf<List<Node>>()
     var routesMap = mutableListOf<Pair<List<Int>, Double>>()  // pair( win bets in route, route probability)
@@ -36,7 +37,8 @@ class RiskMinimizationRater : PopulationRater() {
     }
 
     override fun rateCouponsGroup(couponsGroup: CouponsGroup) {
-        Main.modifyContributions(couponsGroup)
+//        Main.modifyContributions(couponsGroup)
+        stackStrategy.modifyContribution(couponsGroup, false)
         this.couponsGroup = couponsGroup.copy()
         val result = processRoutes()
         couponsGroup.rate = result
