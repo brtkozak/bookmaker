@@ -24,10 +24,34 @@ class MenAlpineBets {
         val saalbach_06_03 = "{\"bets\":[{\"names\":\"Paris D. - Mayer M.\",\"odd1\":\"1.50\",\"odd2\":\"2.38\",\"won\":2},{\"names\":\"Paris D. - Feuz B.\",\"odd1\":\"1.46\",\"odd2\":\"2.49\",\"won\":2},{\"names\":\"Paris D. - Kriechmayr V.\",\"odd1\":\"1.63\",\"odd2\":\"2.11\",\"won\":2},{\"names\":\"Paris D. - Innerhofer Ch.\",\"odd1\":\"1.33\",\"odd2\":\"2.98\",\"won\":1},{\"names\":\"Mayer M. - Feuz B.\",\"odd1\":\"1.67\",\"odd2\":\"2.05\",\"won\":2},{\"names\":\"Mayer M. - Innerhofer Ch.\",\"odd1\":\"1.42\",\"odd2\":\"2.53\",\"won\":1},{\"names\":\"Mayer M. - Franz M.\",\"odd1\":\"1.38\",\"odd2\":\"2.67\",\"won\":1},{\"names\":\"Feuz B. - Kriechmayr V.\",\"odd1\":\"1.94\",\"odd2\":\"1.75\",\"won\":2},{\"names\":\"Feuz B. - Franz M.\",\"odd1\":\"1.40\",\"odd2\":\"2.68\",\"won\":1},{\"names\":\"Feuz B. - Sander A.\",\"odd1\":\"1.30\",\"odd2\":\"3.03\",\"won\":1},{\"names\":\"Kriechmayr V. - Innerhofer Ch.\",\"odd1\":\"1.38\",\"odd2\":\"2.76\",\"won\":1},{\"names\":\"Kriechmayr V. - Odermatt M.\",\"odd1\":\"1.25\",\"odd2\":\"3.35\",\"won\":1},{\"names\":\"Innerhofer Ch. - Franz M.\",\"odd1\":\"1.67\",\"odd2\":\"2.05\",\"won\":2},{\"names\":\"Innerhofer Ch. - Clarey J.\",\"odd1\":\"1.50\",\"odd2\":\"2.31\",\"won\":1},{\"names\":\"Franz M. - Sander A.\",\"odd1\":\"1.82\",\"odd2\":\"1.86\",\"won\":1},{\"names\":\"Franz M. - Odermatt M.\",\"odd1\":\"1.60\",\"odd2\":\"2.11\",\"won\":2}]}"
         val kranjska_13_03 = "{\"bets\":[{\"names\":\"Pinturault A. - Zubcic F.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\",\"won\":1},{\"names\":\"Pinturault A. - Faivre M.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\",\"won\":1},{\"names\":\"Pinturault A. - Odermatt M.\",\"odd1\":\"1.60\",\"odd2\":\"2.16\",\"won\":2},{\"names\":\"Zubcic F. - Faivre M.\",\"odd1\":\"1.84\",\"odd2\":\"1.84\",\"won\":2},{\"names\":\"Zubcic F. - Odermatt M.\",\"odd1\":\"1.65\",\"odd2\":\"2.08\",\"won\":2},{\"names\":\"Zubcic F. - Meillard L.\",\"odd1\":\"1.30\",\"odd2\":\"3.03\",\"won\":2},{\"names\":\"Faivre M. - Odermatt M.\",\"odd1\":\"1.65\",\"odd2\":\"2.08\",\"won\":2},{\"names\":\"Faivre M. - Meillard L.\",\"odd1\":\"1.26\",\"odd2\":\"3.28\",\"won\":2},{\"names\":\"Faivre M. - Kranjec Z.\",\"odd1\":\"1.26\",\"odd2\":\"3.28\",\"won\":1},{\"names\":\"Odermatt M. - Kranjec Z.\",\"odd1\":\"1.30\",\"odd2\":\"3.03\",\"won\":1},{\"names\":\"Odermatt M. - Brennsteiner S.\",\"odd1\":\"1.27\",\"odd2\":\"3.21\",\"won\":1},{\"names\":\"Odermatt M. - Favrot T.\",\"odd1\":\"1.27\",\"odd2\":\"3.21\",\"won\":1},{\"names\":\"Meillard L. - Kranjec Z.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\",\"won\":1},{\"names\":\"Meillard L. - Brennsteiner S.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\",\"won\":1},{\"names\":\"Kranjec Z. - Kristoffersen H.\",\"odd1\":\"1.57\",\"odd2\":\"2.22\",\"won\":2},{\"names\":\"Kranjec Z. - De Aliprandini L.\",\"odd1\":\"1.48\",\"odd2\":\"2.36\",\"won\":2},{\"names\":\"Brennsteiner S. - Favrot T.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\",\"won\":1},{\"names\":\"Brennsteiner S. - Murisier J.\",\"odd1\":\"1.48\",\"odd2\":\"2.36\",\"won\":1}]}"
         val kranjska_14_03 = "{\"bets\":[{\"names\":\"Noel C. - Schwarz M.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\",\"won\":1},{\"names\":\"Noel C. - Kristoffersen H.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\",\"won\":1},{\"names\":\"Noel C. - Foss Solevaag S.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\",\"won\":1},{\"names\":\"Schwarz M. - Kristoffersen H.\",\"odd1\":\"1.77\",\"odd2\":\"1.92\",\"won\":2},{\"names\":\"Schwarz M. - Pertl A.\",\"odd1\":\"1.50\",\"odd2\":\"2.31\",\"won\":1},{\"names\":\"Schwarz M. - Vinatzer A.\",\"odd1\":\"1.30\",\"odd2\":\"3.03\",\"won\":1},{\"names\":\"Kristoffersen H. - Foss Solevaag S.\",\"odd1\":\"1.65\",\"odd2\":\"2.08\",\"won\":1},{\"names\":\"Kristoffersen H. - Zenhaeusern R.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\",\"won\":2},{\"names\":\"Kristoffersen H. - Pertl A.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\",\"won\":1},{\"names\":\"Foss Solevaag S. - Pinturault A.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\",\"won\":1},{\"names\":\"Foss Solevaag S. - Yule D.\",\"odd1\":\"1.40\",\"odd2\":\"2.60\",\"won\":1},{\"names\":\"Pertl A. - Feller M.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\",\"won\":2},{\"names\":\"Pertl A. - Matt Michael\",\"odd1\":\"1.45\",\"odd2\":\"2.44\",\"won\":1},{\"names\":\"Zenhaeusern R. - Pinturault A.\",\"odd1\":\"1.65\",\"odd2\":\"2.08\",\"won\":1},{\"names\":\"Zenhaeusern R. - Vinatzer A.\",\"odd1\":\"1.47\",\"odd2\":\"2.46\",\"won\":1},{\"names\":\"Pinturault A. - Meillard L.\",\"odd1\":\"1.53\",\"odd2\":\"2.31\",\"won\":2}]}"
-        val lenzerheide_18_03 = "{\"bets\":[{\"names\":\"Kriechmayr V. - Odermatt M.\",\"odd1\":\"1.76\",\"odd2\":\"1.93\"},{\"names\":\"Kriechmayr V. - Mayer M.\",\"odd1\":\"1.45\",\"odd2\":\"2.52\"},{\"names\":\"Kriechmayr V. - Paris D.\",\"odd1\":\"1.23\",\"odd2\":\"3.65\"},{\"names\":\"Odermatt M. - Mayer M.\",\"odd1\":\"1.53\",\"odd2\":\"2.31\"},{\"names\":\"Odermatt M. - Pinturault A.\",\"odd1\":\"1.27\",\"odd2\":\"3.34\"},{\"names\":\"Odermatt M. - Bailet M.\",\"odd1\":\"1.27\",\"odd2\":\"3.34\"},{\"names\":\"Mayer M. - Paris D.\",\"odd1\":\"1.47\",\"odd2\":\"2.46\"},{\"names\":\"Mayer M. - Pinturault A.\",\"odd1\":\"1.43\",\"odd2\":\"2.58\"},{\"names\":\"Paris D. - Bailet M.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Paris D. - Feuz B.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Pinturault A. - Sander A.\",\"odd1\":\"1.60\",\"odd2\":\"2.16\"},{\"names\":\"Pinturault A. - Baumann R.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\"},{\"names\":\"Bailet M. - Innerhofer Ch.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Bailet M. - Meillard L.\",\"odd1\":\"1.47\",\"odd2\":\"2.39\"},{\"names\":\"Feuz B. - Sander A.\",\"odd1\":\"1.63\",\"odd2\":\"2.11\"},{\"names\":\"Feuz B. - Franz M.\",\"odd1\":\"1.42\",\"odd2\":\"2.61\"}]}"
-        val lenzerheide_21_03 = "{\"bets\":[{\"names\":\"Noel C. - Schwarz M.\",\"odd1\":\"1.48\",\"odd2\":\"2.43\"},{\"names\":\"Noel C. - Kristoffersen H.\",\"odd1\":\"1.42\",\"odd2\":\"2.61\"},{\"names\":\"Noel C. - Zenhaeusern R.\",\"odd1\":\"1.37\",\"odd2\":\"2.80\"},{\"names\":\"Schwarz M. - Foss Solevaag S.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\"},{\"names\":\"Schwarz M. - Pertl A.\",\"odd1\":\"1.47\",\"odd2\":\"2.46\"},{\"names\":\"Schwarz M. - Muffat Jeandet V.\",\"odd1\":\"1.44\",\"odd2\":\"2.55\"},{\"names\":\"Kristoffersen H. - Zenhaeusern R.\",\"odd1\":\"1.75\",\"odd2\":\"1.94\"},{\"names\":\"Kristoffersen H. - Feller M.\",\"odd1\":\"1.50\",\"odd2\":\"2.38\"},{\"names\":\"Kristoffersen H. - Pinturault A.\",\"odd1\":\"1.50\",\"odd2\":\"2.38\"},{\"names\":\"Zenhaeusern R. - Foss Solevaag S.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Zenhaeusern R. - Pertl A.\",\"odd1\":\"1.60\",\"odd2\":\"2.16\"},{\"names\":\"Zenhaeusern R. - Meillard L.\",\"odd1\":\"1.48\",\"odd2\":\"2.43\"},{\"names\":\"Foss Solevaag S. - Pinturault A.\",\"odd1\":\"1.60\",\"odd2\":\"2.16\"},{\"names\":\"Foss Solevaag S. - Vinatzer A.\",\"odd1\":\"1.48\",\"odd2\":\"2.43\"},{\"names\":\"Pertl A. - Muffat Jeandet V.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\"},{\"names\":\"Pertl A. - Matt Michael\",\"odd1\":\"1.42\",\"odd2\":\"2.61\"},{\"names\":\"Pinturault A. - Meillard L.\",\"odd1\":\"1.78\",\"odd2\":\"1.90\"},{\"names\":\"Pinturault A. - Matt Michael\",\"odd1\":\"1.45\",\"odd2\":\"2.52\"}]}"
+        // nie odbyly sie
+        //        val lenzerheide_18_03 = "{\"bets\":[{\"names\":\"Kriechmayr V. - Odermatt M.\",\"odd1\":\"1.76\",\"odd2\":\"1.93\"},{\"names\":\"Kriechmayr V. - Mayer M.\",\"odd1\":\"1.45\",\"odd2\":\"2.52\"},{\"names\":\"Kriechmayr V. - Paris D.\",\"odd1\":\"1.23\",\"odd2\":\"3.65\"},{\"names\":\"Odermatt M. - Mayer M.\",\"odd1\":\"1.53\",\"odd2\":\"2.31\"},{\"names\":\"Odermatt M. - Pinturault A.\",\"odd1\":\"1.27\",\"odd2\":\"3.34\"},{\"names\":\"Odermatt M. - Bailet M.\",\"odd1\":\"1.27\",\"odd2\":\"3.34\"},{\"names\":\"Mayer M. - Paris D.\",\"odd1\":\"1.47\",\"odd2\":\"2.46\"},{\"names\":\"Mayer M. - Pinturault A.\",\"odd1\":\"1.43\",\"odd2\":\"2.58\"},{\"names\":\"Paris D. - Bailet M.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Paris D. - Feuz B.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Pinturault A. - Sander A.\",\"odd1\":\"1.60\",\"odd2\":\"2.16\"},{\"names\":\"Pinturault A. - Baumann R.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\"},{\"names\":\"Bailet M. - Innerhofer Ch.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\"},{\"names\":\"Bailet M. - Meillard L.\",\"odd1\":\"1.47\",\"odd2\":\"2.39\"},{\"names\":\"Feuz B. - Sander A.\",\"odd1\":\"1.63\",\"odd2\":\"2.11\"},{\"names\":\"Feuz B. - Franz M.\",\"odd1\":\"1.42\",\"odd2\":\"2.61\"}]}"
+        val lenzerheide_21_03 = "{\"bets\":[{\"names\":\"Noel C. - Schwarz M.\",\"odd1\":\"1.48\",\"odd2\":\"2.43\",\"won\":1},{\"names\":\"Noel C. - Kristoffersen H.\",\"odd1\":\"1.42\",\"odd2\":\"2.61\",\"won\":1},{\"names\":\"Noel C. - Zenhaeusern R.\",\"odd1\":\"1.37\",\"odd2\":\"2.80\",\"won\":1},{\"names\":\"Schwarz M. - Foss Solevaag S.\",\"odd1\":\"1.55\",\"odd2\":\"2.26\",\"won\":1},{\"names\":\"Schwarz M. - Pertl A.\",\"odd1\":\"1.47\",\"odd2\":\"2.46\",\"won\":1},{\"names\":\"Schwarz M. - Muffat Jeandet V.\",\"odd1\":\"1.44\",\"odd2\":\"2.55\",\"won\":1},{\"names\":\"Kristoffersen H. - Zenhaeusern R.\",\"odd1\":\"1.75\",\"odd2\":\"1.94\",\"won\":1},{\"names\":\"Kristoffersen H. - Feller M.\",\"odd1\":\"1.50\",\"odd2\":\"2.38\",\"won\":2},{\"names\":\"Kristoffersen H. - Pinturault A.\",\"odd1\":\"1.50\",\"odd2\":\"2.38\",\"won\":2},{\"names\":\"Zenhaeusern R. - Foss Solevaag S.\",\"odd1\":\"1.70\",\"odd2\":\"2.01\",\"won\":1},{\"names\":\"Zenhaeusern R. - Meillard L.\",\"odd1\":\"1.48\",\"odd2\":\"2.43\",\"won\":2},{\"names\":\"Foss Solevaag S. - Pinturault A.\",\"odd1\":\"1.60\",\"odd2\":\"2.16\",\"won\":2},{\"names\":\"Foss Solevaag S. - Vinatzer A.\",\"odd1\":\"1.48\",\"odd2\":\"2.43\",\"won\":2},{\"names\":\"Pertl A. - Muffat Jeandet V.\",\"odd1\":\"1.80\",\"odd2\":\"1.88\",\"won\":2},{\"names\":\"Pinturault A. - Meillard L.\",\"odd1\":\"1.78\",\"odd2\":\"1.90\",\"won\":1},{\"names\":\"Pinturault A. - Matt Michael\",\"odd1\":\"1.45\",\"odd2\":\"2.52\",\"won\":1}]}"
 
-        val bets = listOf(valgardena1, valgardena2, altabadia1, madonna, bormio)
+        val bets = listOf(
+                valgardena1,
+                valgardena2,
+                altabadia1,
+                madonna,
+                bormio,
+                zegreb_06_01,
+                adelboden_08_01,
+                adelboden_10_01,
+                kitzbuehel_22_01,
+                kitzbuehel_24_01,
+                schladming_26_01,
+                chamonix_30_01,
+                chamonix_31_01,
+                gapa_05_02,
+                cortina_11_02,
+                cortina_14_02,
+                cortina_15_02,
+                cortina_19_02,
+                cortina_21_02,
+                saalbach_06_03,
+                kranjska_13_03,
+                kranjska_14_03,
+                lenzerheide_21_03)
 
         var lastTournament = "valgardena"
 
@@ -38,6 +62,24 @@ class MenAlpineBets {
                 2 -> lastTournament = "valgardena"
                 3 -> lastTournament = "altabadia"
                 4 -> lastTournament = "bormio"
+                5 -> lastTournament = "bormio"
+                6 -> lastTournament = "zagreb"
+                7 -> lastTournament = "adelboden"
+                8 -> lastTournament = "kitzbuehel"
+                9 -> lastTournament = "kitzbuehel"
+                10 -> lastTournament = "kitzbuehel"
+                11 -> lastTournament = "schladming1"
+                12 -> lastTournament = "chamonix1"
+                13 -> lastTournament = "gapa"
+                14 -> lastTournament = "gapa"
+                15 -> lastTournament = "cortina"
+                16 -> lastTournament = "cortina"
+                17 -> lastTournament = "cortina"
+                18 -> lastTournament = "cortina"
+                19 -> lastTournament = "saalbach"
+                20 -> lastTournament = "saalbach"
+                21 -> lastTournament = "kranjska"
+                23 -> lastTournament = "lenzerheide"
             }
         }
     }
