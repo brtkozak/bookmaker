@@ -10,8 +10,6 @@ class FixedStack(startBankroll: Double, private  val fixedStack : Double) : Stac
             return false
         }
         val stackToDivide = if(currentBankroll < fixedStack) currentBankroll else fixedStack
-        if(updateBankroll)
-            currentBankroll -= stackToDivide
         modifySingleCouponStackProportional(couponsGroup, stackToDivide)
         return true
     }

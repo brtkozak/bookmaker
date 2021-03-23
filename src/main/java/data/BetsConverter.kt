@@ -16,6 +16,11 @@ class BetsConverter {
             Main.Companion.Mode.MSki -> MenAlpineBets.bets
         }
         val betsDto = gson.fromJson(bets[betsIndex], BetsDto::class.java)
+        when(Main.MODE) {
+            Main.Companion.Mode.WSki -> WomenAlpeinBets.currentSkiType = betsDto.skiType
+            Main.Companion.Mode.MSki -> MenAlpineBets.currentSkiType = betsDto.skiType
+            else -> {}
+        }
         val result = mutableListOf<Bet>()
         betsDto.bets.forEach {
             result.add(getBet(it))
@@ -100,6 +105,15 @@ class BetsConverter {
                 .replace("foss solevaag", "foss-solevaag")
                 .replace("st germain", "st-germain")
                 .replace("mckennis a.", "mckennis d.a.")
+                .replace("matt michael", "matt m.")
+                .replace("muffat jeandet", "muffat-jeandet")
+                .replace("h.reichelt", "reichelt h.")
+                .replace("nestvold haugen", "nestvold-haugen")
+                .replace("zampa adam", "zampa a.")
+                .replace("caviezel gino", "caviezel g.")
+                .replace("de aliprandini l.", "de a.l.")
+
+
     }
 
     private fun getProbabilities(betDto: BetDto): Pair<Double, Double> {
@@ -118,9 +132,21 @@ class BetsConverter {
             val probability = probabilities.firstOrNull {
                 (it.jumper1 == bet.name1 && it.jumper2 == bet.name2) || (it.jumper1 == bet.name2 && it.jumper2 == bet.name1)
             }
-            if(probability == null){
+
+            val bet1 =  bet.name1
+            val bet2 = bet.name2
+            if(probability == null ){
+                val probNames1 = probabilities.map { it.jumper1 }
+                val probNames2 = probabilities.map { it.jumper2 }
+                if(!probNames1.contains(bet1) && !probNames2.contains(bet1)) {
+                    val z =2
+                }
+                if(!probNames1.contains(bet2) && !probNames2.contains(bet2)) {
+                    val z =2
+                }
                 val x = 2
             }
+
             probability?.let {
                 if (it.jumper1 == bet.name1 && it.jumper2 == bet.name2) {
                     bet.my1Prob = probability.jumper1WinProbability
@@ -133,9 +159,10 @@ class BetsConverter {
                     bet.value1 = bet.odd1 * bet.my1Prob
                     bet.value2 = bet.odd2 * bet.my2Prob
                 }
-
-                if (((it.jumper1.contains("stoch") || it.jumper2.contains("stoch")) && (bet.name1.contains("geiger") || bet.name2.contains("geiger")))
-                        || ((it.jumper1.contains("geiger") || it.jumper2.contains("geiger")) && (bet.name1.contains("stoch") || bet.name2.contains("stoch")))) {
+                val name1 = "yule"
+                val name2= "noel"
+                if (((it.jumper1.contains(name1) || it.jumper2.contains(name1)) && (bet.name1.contains(name2) || bet.name2.contains(name2)))
+                        || ((it.jumper1.contains(name2) || it.jumper2.contains(name2)) && (bet.name1.contains(name1) || bet.name2.contains(name1)))) {
                     val x = 2
                 }
             }

@@ -31,7 +31,7 @@ abstract class StackStrategy(startBankRoll : Double) {
             true
         else {
             val difference = bankrollStates[bankrollStates.size - 1] - bankrollStates[bankrollStates.size - 2]
-            difference > 0
+            difference >= 0
         }
     }
 

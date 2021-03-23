@@ -14,8 +14,6 @@ class PercentageStack(startBankroll : Double, private val bankrollPercentage : D
         if(stackToDivide < 2)
             currentBankroll = 0.0
         stackToDivide = if(currentBankroll < stackToDivide) currentBankroll else stackToDivide
-        if(updateBankroll)
-            currentBankroll -= stackToDivide
         modifySingleCouponStackProportional(couponsGroup, stackToDivide)
         return true
     }

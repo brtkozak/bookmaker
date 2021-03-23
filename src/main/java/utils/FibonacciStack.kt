@@ -11,14 +11,14 @@ class FibonacciStack(startBankroll: Double, private val baseStack: Double) : Sta
             modifySingleCouponStackProportional(couponsGroup, 0.0)
             return false
         }
-        if(wasPreviousBetWon() && currentFibonacciWord > 1)
-            currentFibonacciWord --
-        else
-            currentFibonacciWord ++
+        if(updateBankroll) {
+            if (wasPreviousBetWon() && currentFibonacciWord > 1)
+                currentFibonacciWord--
+            else
+                currentFibonacciWord++
+        }
         var stackToDivide = baseStack * getFibonacciWord(currentFibonacciWord)
         stackToDivide = if (currentBankroll < stackToDivide) currentBankroll else stackToDivide
-        if (updateBankroll)
-            currentBankroll -= stackToDivide
         modifySingleCouponStackProportional(couponsGroup, stackToDivide)
         return true
     }

@@ -13,8 +13,6 @@ class KellyStack(startBankroll: Double) : StackStrategy(startBankroll){
         val totalOdd = couponsGroup.getTotalOdd()
         var stackToDivide = currentBankroll * ((totalProb * totalOdd - 1) / (totalOdd - 1))
         stackToDivide = if(currentBankroll < stackToDivide) currentBankroll else stackToDivide
-        if(updateBankroll)
-            currentBankroll -= stackToDivide
         modifySingleCouponStackProportional(couponsGroup, stackToDivide)
         return true
     }

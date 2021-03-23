@@ -1,7 +1,8 @@
 package data.entity.bets
 
 data class BetsDto(
-        val bets: List<BetDto>
+        val bets: List<BetDto>,
+        val skiType: String? = null
 )
 
 data class BetDto(

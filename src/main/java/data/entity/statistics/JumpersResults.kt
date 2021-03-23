@@ -8,7 +8,8 @@ data class Jump(
         val tournament: String,
         val day : Int,
         val tournamentType: TournamentType,
-        val points: Double
+        val points: Double,
+        val skiType : String? = null
 )
 
 enum class TournamentType {

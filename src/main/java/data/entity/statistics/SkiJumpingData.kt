@@ -11,7 +11,8 @@ data class Tournament(
         val type: String,
         val day: Int = 0,
         @SerializedName("jumps")
-        val results: List<Result>
+        val results: List<Result>,
+        val skiType: String? = null
 )
 
 data class Result(

@@ -41,8 +41,16 @@ class ProbabilityCalculator {
 
         val mean = stats.mean
         val std = stats.standardDeviation
+        // test
+        val name1 = "bennett"
+        val name2 = "noel"
+        if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)) {
+            val x = 2
+        }
+        //test
         if (commonJumps < 5 || std == 0.0)
-            return null
+//            return null
+            return Probability(jumper1.name, jumper2.name, 0.0, 0.0)
 
         val normalDistribution = NormalDistribution(mean, std)
         var jumper1Wins = 0.0
@@ -55,7 +63,7 @@ class ProbabilityCalculator {
                     jumper1Wins++
             }
             else {
-                if(sample1 + sample2 <0)
+                if(sample1 < 0 )
                     jumper1Wins ++
             }
         }
@@ -63,13 +71,13 @@ class ProbabilityCalculator {
         val jumper2WinProbability = 1 - jumper1WinProbability
 
         // test
-        val name1 = "jansrud"
-        val name2 = "ford"
-        if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)  ) {
+        if (jumper1.name.contains(name1) && jumper2.name.contains(name2) || jumper2.name.contains(name1) && jumper1.name.contains(name2)) {
+            val x = 2
+        }
+        if(jumper1WinProbability == 0.0 && jumper2WinProbability == 0.0) {
             val x = 2
         }
         //test
-
         return Probability(jumper1.name, jumper2.name, jumper1WinProbability, jumper2WinProbability)
     }
 

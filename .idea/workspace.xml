@@ -6,12 +6,40 @@
   <component name="ChangeListManager">
     <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="statistics update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/BetsConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/BetsConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/StatisticsConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/StatisticsConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/BetsDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/BetsDto.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/JumpersResults.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/JumpersResults.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/Probability.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/Probability.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/probability/MenAlpineSkiWeights.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/probability/MenAlpineSkiWeights.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/probability/WomenAlpeinWeights.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/probability/WomenAlpeinWeights.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/probability/ProbabilityCalculator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/probability/ProbabilityCalculator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ga/Algorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/Algorithm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ga/entity/Coupon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/entity/Coupon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/FibonacciStack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/FibonacciStack.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/FixedStack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/FixedStack.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/KellyStack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/KellyStack.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MartingaleStack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MartingaleStack.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PercentageStack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PercentageStack.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/StackStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/StackStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/BetsConverter$getSingeBets$$inlined$sortByDescending$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/BetsConverter$getSingeBets$$inlined$sortByDescending$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/BetsConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/BetsConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/StatisticsConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/StatisticsConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/bets/BetDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/bets/BetDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/bets/BetsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/bets/BetsDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Jump.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Probability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Probability.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Tournament.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Tournament.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/TournamentType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/TournamentType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ga/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616327972405</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="statistics update">
+      <created>1616430692476</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1616430692477</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,9 +454,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.kt</url>
-          <line>118</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/main/java/data/probability/ProbabilityCalculator.kt</url>
+          <line>74</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utils/KellyStack.kt</url>
+          <line>15</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

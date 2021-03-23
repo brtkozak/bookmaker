@@ -76,10 +76,10 @@ class Algorithm(
             if(forceOperators)
                 forceOperators = !forceOperators
         }
-        drawCharts()
+//        drawCharts()
 
         val best = population.minByOrNull { it.rate }
-        drawGainChart(best)
+//        drawGainChart(best)
         printExpectedValue(best)
 
         val probs = mutableListOf<Double>()

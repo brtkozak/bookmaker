@@ -12,14 +12,14 @@ class MartingaleStack(startBankroll: Double, private val baseStack: Double) : St
             modifySingleCouponStackProportional(couponsGroup, 0.0)
             return false
         }
-        if (wasPreviousBetWon())
-            twoPower = 1
-        else
-            twoPower++
+        if(updateBankroll) {
+            if (wasPreviousBetWon())
+                twoPower = 1
+            else
+                twoPower++
+        }
         var stackToDivide = baseStack * twoPower
         stackToDivide = if (currentBankroll < stackToDivide) currentBankroll else stackToDivide
-        if (updateBankroll)
-            currentBankroll -= stackToDivide
         modifySingleCouponStackProportional(couponsGroup, stackToDivide)
 
         return true

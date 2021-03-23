@@ -46,6 +46,8 @@ class WomenAlpeinBets {
                 lenzerheide_20_03,
                 lenzerheide_21_03)
 
+        var currentSkiType : String? = null
+
         var lastTournament = "valdisere"
 
         fun setLastTournament(index : Int) {

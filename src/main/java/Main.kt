@@ -24,9 +24,9 @@ class Main {
 
         // COMMON
         val MIN_VALUE = 1.0
-        val MAX_VALUE = 1.5
+        val MAX_VALUE = 1.6
         val MIN_SINGLE_BET_ODD = 1.3
-        val MAX_SINGLE_BET_ODD = 2.5
+        val MAX_SINGLE_BET_ODD = 2.6
         val ITERANTIONS = 300
         val POPULATION_SIZE = 30
         val TOURNAMENT_SIZE = 4
@@ -41,7 +41,7 @@ class Main {
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val PROB_MEAN = 1 / 6.0
+        val PROB_MEAN = 1 / 3.0
 
         // PROPORTIONAL RISK ONLY
         val BASE_ODD = 1.8
@@ -49,7 +49,7 @@ class Main {
         var PROPORTIONAL_IN_USE = false
         // CONST
 
-        val MODE = Mode.Jump
+        val MODE = Mode.MSki
 
         enum class Mode {
             Jump, MSki, WSki
@@ -70,15 +70,19 @@ class Main {
             val probabilities = calculator.getProbabilities(skiJumpingResults)
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
-            singleBets = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
-            return singleBets
+            val singleBetsFiltered = singleBets.filter { it.value > 1 }
+//            val singleBetsFiltered = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
+            if(singleBetsFiltered.isEmpty()){
+                val x =2
+            }
+            return singleBetsFiltered
         }
 
         fun simulateSystem() {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            val stackStrategy : StackStrategy = KellyStack(1000.0)
+            val stackStrategy : StackStrategy = PercentageStack(1000.0, 10.0)
             for(i in 0 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
@@ -94,7 +98,7 @@ class Main {
                         LineChart(),
                         stackStrategy = stackStrategy)
                 val best = algorithm.run() ?: return
-                //                val best = CouponsGroup()
+//                val best = CouponsGroup()
 //                chosenBets.forEach {
 //                    val c = Coupon()
 //                    c.bets.add(it)
@@ -102,7 +106,7 @@ class Main {
 //                }
 //                if(PROPORTIONAL_IN_USE)
 //                    modifyContributions(best)
-                stackStrategy.modifyContribution(best)
+                stackStrategy.modifyContribution(best, true)
                 stackStrategy.updateBankroll(best)
                 best?.let {
                     gains.add(it.getGain())

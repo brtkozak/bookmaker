@@ -25,21 +25,25 @@ class StatisticsConverter {
             result.tournaments.addAll(data.tournaments)
         }
 
-        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO KLIKA OSTATNICH TURNIEJI
-        val temp  = result.tournaments.reversed()
-        val tempResult = mutableListOf<Tournament>()
-        var currentTournaments = 0
-        val maxTournaments = 4
-        temp.forEach { tournament ->
-            if (!tempResult.any { it.name.dropLast(3) == tournament.name.dropLast(3) }) {
-                currentTournaments++
+        if(Main.MODE == Main.Companion.Mode.Jump) {
+            // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO KLIKA OSTATNICH TURNIEJI
+            val temp = result.tournaments.reversed()
+            var tempResult = mutableListOf<Tournament>()
+            var currentTournaments = 0
+            val maxTournaments = 5
+            temp.forEach { tournament ->
+                if (tempResult.map { it.name.dropLast(3) }.distinct().size <= maxTournaments) {
+                    tempResult.add(tournament)
+                }
             }
-            if (currentTournaments <= maxTournaments)
-                tempResult.add(tournament)
+            if (tempResult.map { it.name.dropLast(3) }.distinct().size > maxTournaments)
+                tempResult = tempResult.dropLast(1) as MutableList<Tournament>
+            // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO KLIKA OSTATNICH TURNIEJI
+            return SkiJumpingData(tempResult)
         }
-        // ABY NIE BRAC WSZYSTKICH ZAWODOW TYLKO KLIKA OSTATNICH TURNIEJI
-
-        return SkiJumpingData(tempResult)
+        else {
+            return SkiJumpingData(result.tournaments)
+        }
     }
 
     fun getJumpersResults(skiJumpingData: SkiJumpingData): List<JumperResults> {
@@ -93,7 +97,7 @@ class StatisticsConverter {
             miniSeconds = secondsSplit[1].toInt()
             points = (minutes * 60000 + seconds * 100 + miniSeconds).toDouble()
         }
-        return Jump(tournament = tournament.name, tournamentType = type, points = points, day = tournament.day)
+        return Jump(tournament = tournament.name, tournamentType = type, points = points, day = tournament.day, skiType = tournament.skiType)
     }
 
     private fun normalizeName(skiJumpingData: SkiJumpingData) {

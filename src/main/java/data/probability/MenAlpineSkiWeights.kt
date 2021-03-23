@@ -7,165 +7,183 @@ import data.entity.statistics.Jump
 class MenAlpineSkiWeights : Weights {
 
     override fun getWeight(jump: Jump): Double {
-        return getTournamentWeight(jump)
+        var weight = 1.0
+        val skiTypeWeight = getSkiTypeWeight(jump)
+        val tournamentWeight = getTournamentWeight(jump)
+        return skiTypeWeight * tournamentWeight
+//        return getTournamentWeight(jump)
+    }
+
+    private fun getSkiTypeWeight(jump: Jump) : Double {
+        var weight = 1.0
+        MenAlpineBets.currentSkiType?.let {
+            if(it == jump.skiType)
+                weight = 100.0
+        }
+        return weight
     }
 
     private fun getTournamentWeight(jump: Jump): Double {
+        val w1 = 1.0
+        val w2 = 2.0
+        val w3 = 4.0
+        val w4 = 8.0
+        val wElse = 0.5
         return when {
             MenAlpineBets.lastTournament.contains("valgardena") -> {
                 when {
-                    jump.tournament.contains("soelden") -> 1.0
-                    jump.tournament.contains("lech") -> 1.0
-                    jump.tournament.contains("santacaterina") -> 2.0
-                    jump.tournament.contains("valdisere") -> 8.0
-                    jump.tournament.contains("valgardena") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("soelden") -> w1
+                    jump.tournament.contains("lech") -> w1
+                    jump.tournament.contains("santacaterina") -> w2
+                    jump.tournament.contains("valdisere") -> w3
+                    jump.tournament.contains("valgardena") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("altabadia") -> {
                 when {
-                    jump.tournament.contains("soelden") -> 1.0
-                    jump.tournament.contains("lech") -> 1.0
-                    jump.tournament.contains("santacaterina") -> 1.0
-                    jump.tournament.contains("valdisere") -> 2.0
-                    jump.tournament.contains("valgardena") -> 8.0
-                    jump.tournament.contains("altabadia") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("soelden") -> w1
+                    jump.tournament.contains("lech") -> w1
+                    jump.tournament.contains("santacaterina") -> w1
+                    jump.tournament.contains("valdisere") -> w2
+                    jump.tournament.contains("valgardena") -> w3
+                    jump.tournament.contains("altabadia") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("bormio") -> {
                 when {
-                    jump.tournament.contains("lech") -> 1.0
-                    jump.tournament.contains("santacaterina") -> 1.0
-                    jump.tournament.contains("valdisere") -> 1.0
-                    jump.tournament.contains("valgardena") -> 1.0
-                    jump.tournament.contains("altabadia") -> 2.0
-                    jump.tournament.contains("madonna") -> 8.0
-                    jump.tournament.contains("bormio") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("lech") -> w1
+                    jump.tournament.contains("santacaterina") -> w1
+                    jump.tournament.contains("valdisere") -> w1
+                    jump.tournament.contains("valgardena") -> w1
+                    jump.tournament.contains("altabadia") -> w2
+                    jump.tournament.contains("madonna") -> w3
+                    jump.tournament.contains("bormio") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("zagreb") -> {
                 when {
-                    jump.tournament.contains("santacaterina") -> 1.0
-                    jump.tournament.contains("valdisere") -> 1.0
-                    jump.tournament.contains("valgardena") -> 1.0
-                    jump.tournament.contains("altabadia") -> 1.0
-                    jump.tournament.contains("madonna") -> 2.0
-                    jump.tournament.contains("bormio") -> 8.0
-                    jump.tournament.contains("zagreb") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("santacaterina") -> w1
+                    jump.tournament.contains("valdisere") -> w1
+                    jump.tournament.contains("valgardena") -> w1
+                    jump.tournament.contains("altabadia") -> w1
+                    jump.tournament.contains("madonna") -> w2
+                    jump.tournament.contains("bormio") -> w3
+                    jump.tournament.contains("zagreb") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("adelboden") -> {
                 when {
-                    jump.tournament.contains("valdisere") -> 1.0
-                    jump.tournament.contains("valgardena") -> 1.0
-                    jump.tournament.contains("altabadia") -> 1.0
-                    jump.tournament.contains("madonna") -> 1.0
-                    jump.tournament.contains("bormio") -> 2.0
-                    jump.tournament.contains("zagreb") -> 8.0
-                    jump.tournament.contains("adelboden") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("valdisere") -> w1
+                    jump.tournament.contains("valgardena") -> w1
+                    jump.tournament.contains("altabadia") -> w1
+                    jump.tournament.contains("madonna") -> w1
+                    jump.tournament.contains("bormio") -> w2
+                    jump.tournament.contains("zagreb") -> w3
+                    jump.tournament.contains("adelboden") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("kitzbuehel") -> {
                 when {
-                    jump.tournament.contains("altabadia") -> 1.0
-                    jump.tournament.contains("madonna") -> 1.0
-                    jump.tournament.contains("bormio") -> 1.0
-                    jump.tournament.contains("zagreb") -> 1.0
-                    jump.tournament.contains("adelboden") -> 2.0
-                    jump.tournament.contains("flachau") -> 8.0
-                    jump.tournament.contains("kitzbuehel") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("altabadia") -> w1
+                    jump.tournament.contains("madonna") -> w1
+                    jump.tournament.contains("bormio") -> w1
+                    jump.tournament.contains("zagreb") -> w1
+                    jump.tournament.contains("adelboden") -> w2
+                    jump.tournament.contains("flachau") -> w3
+                    jump.tournament.contains("kitzbuehel") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("schladming") -> {
                 when {
-                    jump.tournament.contains("madonna") -> 1.0
-                    jump.tournament.contains("bormio") -> 1.0
-                    jump.tournament.contains("zagreb") -> 1.0
-                    jump.tournament.contains("adelboden") -> 1.0
-                    jump.tournament.contains("flachau") -> 2.0
-                    jump.tournament.contains("kitzbuehel") -> 8.0
-                    jump.tournament.contains("schladming") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("madonna") -> w1
+                    jump.tournament.contains("bormio") -> w1
+                    jump.tournament.contains("zagreb") -> w1
+                    jump.tournament.contains("adelboden") -> w1
+                    jump.tournament.contains("flachau") -> w2
+                    jump.tournament.contains("kitzbuehel") -> w3
+                    jump.tournament.contains("schladming") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("chamonix") -> {
                 when {
-                    jump.tournament.contains("bormio") -> 1.0
-                    jump.tournament.contains("zagreb") -> 1.0
-                    jump.tournament.contains("adelboden") -> 1.0
-                    jump.tournament.contains("flachau") -> 1.0
-                    jump.tournament.contains("kitzbuehel") -> 2.0
-                    jump.tournament.contains("schladming") -> 8.0
-                    jump.tournament.contains("chamonix") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("bormio") -> w1
+                    jump.tournament.contains("zagreb") -> w1
+                    jump.tournament.contains("adelboden") -> w1
+                    jump.tournament.contains("flachau") -> w1
+                    jump.tournament.contains("kitzbuehel") -> w2
+                    jump.tournament.contains("schladming") -> w3
+                    jump.tournament.contains("chamonix") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("gapa") -> {
                 when {
-                    jump.tournament.contains("zagreb") -> 1.0
-                    jump.tournament.contains("adelboden") -> 1.0
-                    jump.tournament.contains("flachau") -> 1.0
-                    jump.tournament.contains("kitzbuehel") -> 1.0
-                    jump.tournament.contains("schladming") -> 2.0
-                    jump.tournament.contains("chamonix") -> 8.0
-                    jump.tournament.contains("gapa") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("zagreb") -> w1
+                    jump.tournament.contains("adelboden") -> w1
+                    jump.tournament.contains("flachau") -> w1
+                    jump.tournament.contains("kitzbuehel") -> w1
+                    jump.tournament.contains("schladming") -> w2
+                    jump.tournament.contains("chamonix") -> w3
+                    jump.tournament.contains("gapa") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("cortina") -> {
                 when {
-                    jump.tournament.contains("adelboden") -> 1.0
-                    jump.tournament.contains("flachau") -> 1.0
-                    jump.tournament.contains("kitzbuehel") -> 1.0
-                    jump.tournament.contains("schladming") -> 1.0
-                    jump.tournament.contains("chamonix") -> 2.0
-                    jump.tournament.contains("gapa") -> 8.0
-                    jump.tournament.contains("cortina") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("adelboden") -> w1
+                    jump.tournament.contains("flachau") -> w1
+                    jump.tournament.contains("kitzbuehel") -> w1
+                    jump.tournament.contains("schladming") -> w1
+                    jump.tournament.contains("chamonix") -> w2
+                    jump.tournament.contains("gapa") -> w3
+                    jump.tournament.contains("cortina") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("saalbach") -> {
                 when {
-                    jump.tournament.contains("kitzbuehel") -> 1.0
-                    jump.tournament.contains("schladming") -> 1.0
-                    jump.tournament.contains("chamonix") -> 1.0
-                    jump.tournament.contains("gapa") -> 1.0
-                    jump.tournament.contains("cortina") -> 2.0
-                    jump.tournament.contains("bansko") -> 8.0
-                    jump.tournament.contains("saalbach") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("kitzbuehel") -> w1
+                    jump.tournament.contains("schladming") -> w1
+                    jump.tournament.contains("chamonix") -> w1
+                    jump.tournament.contains("gapa") -> w1
+                    jump.tournament.contains("cortina") -> w2
+                    jump.tournament.contains("bansko") -> w3
+                    jump.tournament.contains("saalbach") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("kranjska") -> {
                 when {
-                    jump.tournament.contains("schladming") -> 1.0
-                    jump.tournament.contains("chamonix") -> 1.0
-                    jump.tournament.contains("gapa") -> 1.0
-                    jump.tournament.contains("cortina") -> 1.0
-                    jump.tournament.contains("bansko") -> 2.0
-                    jump.tournament.contains("saalbach") -> 8.0
-                    jump.tournament.contains("kranjska") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("schladming") -> w1
+                    jump.tournament.contains("chamonix") -> w1
+                    jump.tournament.contains("gapa") -> w1
+                    jump.tournament.contains("cortina") -> w1
+                    jump.tournament.contains("bansko") -> w2
+                    jump.tournament.contains("saalbach") -> w3
+                    jump.tournament.contains("kranjska") -> w4
+                    else -> wElse
                 }
             }
             MenAlpineBets.lastTournament.contains("lenzerheide") -> {
                 when {
-                    jump.tournament.contains("chamonix") -> 1.0
-                    jump.tournament.contains("gapa") -> 1.0
-                    jump.tournament.contains("cortina") -> 1.0
-                    jump.tournament.contains("bansko") -> 1.0
-                    jump.tournament.contains("saalbach") -> 2.0
-                    jump.tournament.contains("kranjska") -> 8.0
-                    jump.tournament.contains("lenzerheide") -> 16.0
-                    else -> 0.0
+                    jump.tournament.contains("chamonix") -> w1
+                    jump.tournament.contains("gapa") -> w1
+                    jump.tournament.contains("cortina") -> w1
+                    jump.tournament.contains("bansko") -> w1
+                    jump.tournament.contains("saalbach") -> w2
+                    jump.tournament.contains("kranjska") -> w3
+                    jump.tournament.contains("lenzerheide") -> w4
+                    else -> wElse
                 }
             }
-            else -> return 0.0
+            else -> return 1.0
         }
     }
 

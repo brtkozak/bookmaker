@@ -16,6 +16,14 @@ data class Coupon(
         return prob
     }
 
+    fun getBookProb() : Double {
+        var prob = 1.0
+        bets.forEach {
+            prob *= it.bookProb
+        }
+        return prob
+    }
+
     fun copy() : Coupon {
         val copy =  Coupon()
         this.bets.forEach {
