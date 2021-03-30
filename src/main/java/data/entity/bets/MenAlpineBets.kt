@@ -81,7 +81,7 @@ class MenAlpineBets {
                 19 -> lastTournament = "saalbach"
                 20 -> lastTournament = "saalbach"
                 21 -> lastTournament = "kranjska"
-                23 -> lastTournament = "lenzerheide"
+                22 -> lastTournament = "lenzerheide"
             }
         }
     }

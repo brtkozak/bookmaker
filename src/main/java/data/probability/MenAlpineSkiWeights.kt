@@ -9,7 +9,7 @@ class MenAlpineSkiWeights : Weights {
     override fun getWeight(jump: Jump): Double {
         var weight = 1.0
         val skiTypeWeight = getSkiTypeWeight(jump)
-        val tournamentWeight = getTournamentWeight(jump)
+        val tournamentWeight = getTournamentWeight(jump, skiTypeWeight > 1.5)
         return skiTypeWeight * tournamentWeight
 //        return getTournamentWeight(jump)
     }
@@ -18,17 +18,20 @@ class MenAlpineSkiWeights : Weights {
         var weight = 1.0
         MenAlpineBets.currentSkiType?.let {
             if(it == jump.skiType)
-                weight = 100.0
+                weight = 10000.0
         }
         return weight
     }
 
-    private fun getTournamentWeight(jump: Jump): Double {
+    private fun getTournamentWeight(jump: Jump, sameSkiType: Boolean): Double {
         val w1 = 1.0
         val w2 = 2.0
         val w3 = 4.0
         val w4 = 8.0
-        val wElse = 0.5
+        val wElse = if (sameSkiType)
+            1.0
+        else
+            0.0
         return when {
             MenAlpineBets.lastTournament.contains("valgardena") -> {
                 when {

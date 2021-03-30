@@ -122,7 +122,7 @@ class MenAlpineStatistics  {
                 19 -> 30 // saalbach
                 20 -> 31
                 21 -> 32
-                23 -> 34
+                22 -> 34
                 else -> 0
             }
         }

@@ -112,7 +112,9 @@ class BetsConverter {
                 .replace("zampa adam", "zampa a.")
                 .replace("caviezel gino", "caviezel g.")
                 .replace("de aliprandini l.", "de a.l.")
-
+                .replace("gasienica daniel", "gasienica-daniel")
+                .replace("scheyer ch", "scheyer c")
+                .replace("gagnon m.m.", "gagnon m.")
 
     }
 

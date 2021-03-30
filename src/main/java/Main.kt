@@ -41,7 +41,7 @@ class Main {
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val PROB_MEAN = 1 / 3.0
+        val PROB_MEAN = 1/2.0
 
         // PROPORTIONAL RISK ONLY
         val BASE_ODD = 1.8
@@ -49,7 +49,7 @@ class Main {
         var PROPORTIONAL_IN_USE = false
         // CONST
 
-        val MODE = Mode.MSki
+        val MODE = Mode.Jump
 
         enum class Mode {
             Jump, MSki, WSki
@@ -70,10 +70,13 @@ class Main {
             val probabilities = calculator.getProbabilities(skiJumpingResults)
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
-            val singleBetsFiltered = singleBets.filter { it.value > 1 }
-//            val singleBetsFiltered = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
+//            val singleBetsFiltered = singleBets.filter { it.value > 1 }
+            val singleBetsFiltered = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
+            if(index == 22){
+                val x = 2
+            }
             if(singleBetsFiltered.isEmpty()){
-                val x =2
+                val x = 2
             }
             return singleBetsFiltered
         }
@@ -82,7 +85,7 @@ class Main {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            val stackStrategy : StackStrategy = PercentageStack(1000.0, 10.0)
+            val stackStrategy : StackStrategy = KellyStack(1000.0)
             for(i in 0 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
@@ -104,8 +107,6 @@ class Main {
 //                    c.bets.add(it)
 //                    best.coupons.add(c)
 //                }
-//                if(PROPORTIONAL_IN_USE)
-//                    modifyContributions(best)
                 stackStrategy.modifyContribution(best, true)
                 stackStrategy.updateBankroll(best)
                 best?.let {

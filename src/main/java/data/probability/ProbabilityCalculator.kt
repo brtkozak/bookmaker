@@ -63,7 +63,7 @@ class ProbabilityCalculator {
                     jumper1Wins++
             }
             else {
-                if(sample1 < 0 )
+                if(sample1< 0 )
                     jumper1Wins ++
             }
         }
