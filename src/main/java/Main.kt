@@ -15,6 +15,7 @@ import ga.equalprob.EqualProbRater
 import ga.propportionalodd.ProportionalOddRater
 import ga.rsikminimization.BaseCrosserWithRepeats
 import ga.rsikminimization.RiskMinimizationRater
+import org.apache.commons.math3.util.Decimal64.NAN
 import utils.*
 
 class Main {
@@ -41,7 +42,7 @@ class Main {
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val PROB_MEAN = 1/2.0
+        val PROB_MEAN = 1/3.0
 
         // PROPORTIONAL RISK ONLY
         val BASE_ODD = 1.8
@@ -49,7 +50,7 @@ class Main {
         var PROPORTIONAL_IN_USE = false
         // CONST
 
-        val MODE = Mode.Jump
+        val MODE = Mode.MSki
 
         enum class Mode {
             Jump, MSki, WSki
@@ -70,7 +71,7 @@ class Main {
             val probabilities = calculator.getProbabilities(skiJumpingResults)
             val bets = betsConverter.getBets(probabilities, index)
             var singleBets = betsConverter.getSingeBets(bets)
-//            val singleBetsFiltered = singleBets.filter { it.value > 1 }
+//            val singleBetsFiltered = singleBets.filter { it.value > 1 && it.value < 1.3}
             val singleBetsFiltered = singleBets.filter { it.value > minValue && it.value < maxValue && it.odd > minOdd && it.odd < maxOdd }.take(10)
             if(index == 22){
                 val x = 2
@@ -85,7 +86,7 @@ class Main {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            val stackStrategy : StackStrategy = KellyStack(1000.0)
+            val stackStrategy : StackStrategy = FixedStack(1000.0, 100.0)
             for(i in 0 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
@@ -94,19 +95,19 @@ class Main {
                         POPULATION_SIZE,
                         chosenBets,
                         BasePopulationInitializer(),
-                        EqualProbRater(PROB_MEAN),
+                        ProportionalOddRater(),
                         TournamentSelector(TOURNAMENT_SIZE),
                         BaseCrosser(),
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
                         LineChart(),
                         stackStrategy = stackStrategy)
-                val best = algorithm.run() ?: return
-//                val best = CouponsGroup()
-//                chosenBets.forEach {
-//                    val c = Coupon()
-//                    c.bets.add(it)
-//                    best.coupons.add(c)
-//                }
+//                val best = algorithm.run() ?: return
+                val best = CouponsGroup()
+                chosenBets.forEach {
+                    val c = Coupon()
+                    c.bets.add(it)
+                    best.coupons.add(c)
+                }
                 stackStrategy.modifyContribution(best, true)
                 stackStrategy.updateBankroll(best)
                 best?.let {

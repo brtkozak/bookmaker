@@ -17,5 +17,6 @@ data class Tournament(
 
 data class Result(
         var name: String,
-        val points: String
+        val points: String,
+        var place : Int? = 0
 )

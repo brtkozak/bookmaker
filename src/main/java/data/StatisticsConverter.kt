@@ -49,15 +49,26 @@ class StatisticsConverter {
     fun getJumpersResults(skiJumpingData: SkiJumpingData): List<JumperResults> {
         normalizeName(skiJumpingData)
         val jumperResults = mutableListOf<JumperResults>()
+        skiJumpingData.tournaments.forEach {
+            if(Main.MODE == Main.Companion.Mode.Jump)
+                it.results.sortedByDescending { result -> getJump(it, result).points }
+            else
+                it.results.sortedBy { result -> getJump(it, result).points }
+            for(i in it.results.indices) {
+                it.results[i].place = i + 1
+            }
+        }
         skiJumpingData.tournaments.forEach { tournament ->
             tournament.results.forEach { result ->
                 if (jumperResults.none { it.name == result.name }) {
                     val hashMap = HashMap<String, Jump>()
                     hashMap.put(tournament.name, getJump(tournament, result))
                     val jumperResult = JumperResults(result.name, hashMap)
+                    result.place?.let { jumperResult.places.add(it) }
                     jumperResults.add(jumperResult)
                 } else {
                     val jumperResult = jumperResults.first { it.name == result.name }
+                    result.place?.let { jumperResult.places.add(it) }
                     jumperResult.jumps.put(tournament.name, getJump(tournament, result))
                 }
             }
@@ -97,7 +108,7 @@ class StatisticsConverter {
             miniSeconds = secondsSplit[1].toInt()
             points = (minutes * 60000 + seconds * 1000 + miniSeconds).toDouble()
         }
-        return Jump(tournament = tournament.name, tournamentType = type, points = points, day = tournament.day, skiType = tournament.skiType)
+        return Jump(tournament = tournament.name, tournamentType = type, points = points, day = tournament.day, skiType = tournament.skiType, place = result.place)
     }
 
     private fun normalizeName(skiJumpingData: SkiJumpingData) {

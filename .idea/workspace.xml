@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="statistics update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DeLabertStack.kt" afterDir="false" />
+    <list default="true" id="c0de7942-8020-4d02-9785-95806da6bd91" name="Default Changelist" comment="milestone">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/BetsConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/BetsConverter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/StatisticsConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/StatisticsConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/MenAlpineBets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/bets/WomenAlpeinBets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/MenAlpineStatistics.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/WomenAlpeinStatistics.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/probability/MenAlpineSkiWeights.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/probability/MenAlpineSkiWeights.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/JumpersResults.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/JumpersResults.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/entity/statistics/SkiJumpingData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/probability/ProbabilityCalculator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/probability/ProbabilityCalculator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/probability/WomenAlpeinWeights.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/probability/WomenAlpeinWeights.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ga/entity/Coupon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ga/entity/Coupon.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ga/rsikminimization/BaseCrosserWithRepeatsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ga/rsikminimization/BaseCrosserWithRepeatsTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/BetsConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/BetsConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/data/StatisticsConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/StatisticsConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ga/entity/Coupon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Jump.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Jump.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/JumperResults.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/JumperResults.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entity/statistics/TournamentType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/entity/statistics/TournamentType.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -432,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616531034141</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="milestone">
+      <created>1617119523947</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1617119523947</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +457,8 @@
     <MESSAGE value="system simulation" />
     <MESSAGE value="alpein skiings statistics" />
     <MESSAGE value="statistics update" />
-    <option name="LAST_COMMIT_MESSAGE" value="statistics update" />
+    <MESSAGE value="milestone" />
+    <option name="LAST_COMMIT_MESSAGE" value="milestone" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -466,10 +468,16 @@
           <line>14</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/data/probability/ProbabilityCalculator.kt</url>
+          <line>178</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="data.entity.statistics.JumperResults" memberName="jumps" />
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
       </pinned-members>
     </pin-to-top-manager>
@@ -479,6 +487,10 @@
         <watch expression="bets" />
         <watch expression="stackStrategy" />
         <watch expression="stackStrategy" />
+        <watch expression="jumperResults" />
+        <watch expression="singleBetsFiltered" />
+        <watch expression="minPlace" />
+        <watch expression="stats1" />
       </configuration>
     </watches-manager>
   </component>
@@ -487,6 +499,6 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bookmaker$Main.ic" NAME="Main Coverage Results" MODIFIED="1616323781245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/bookmaker$Main.ic" NAME="Main Coverage Results" MODIFIED="1617168401099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
