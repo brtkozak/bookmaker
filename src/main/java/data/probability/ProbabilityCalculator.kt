@@ -31,7 +31,7 @@ class ProbabilityCalculator {
         return probabilities.filterNotNull()
     }
 
-    private fun calculateProbability2(jumper1: JumperResults, jumper2: JumperResults): Probability? {
+    private fun calculateProbability(jumper1: JumperResults, jumper2: JumperResults): Probability? {
         val stats = SummaryStatistics()
         var commonJumps = 0
         jumper1.jumps.forEach {
@@ -86,10 +86,11 @@ class ProbabilityCalculator {
         return Probability(jumper1.name, jumper2.name, jumper1WinProbability, jumper2WinProbability)
     }
 
-    private fun calculateProbability(jumper1: JumperResults, jumper2: JumperResults): Probability? {
+    private fun calculateProbability2(jumper1: JumperResults, jumper2: JumperResults): Probability? {
         val stats1 = DescriptiveStatistics()
         val stats2 = DescriptiveStatistics ()
 
+        // MEN 2/20   WOMEN 6/30
         val repeatPlace = 6
         val minPlace = 1
         val maxPlace = 30
@@ -168,9 +169,6 @@ class ProbabilityCalculator {
             jumper1WinProb += rest
         else
             jumper2WinProb += rest
-//        jumper1WinProb += rest/2
-//        jumper2WinProb += rest/2
-
         // draws
         if(stats1.sum == 0.0 || stats2.sum == 0.0) {
             val x = 2

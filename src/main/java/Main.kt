@@ -1,6 +1,8 @@
 import chart.LineChart
+import com.google.gson.Gson
 import data.BetsConverter
 import data.StatisticsConverter
+import data.entity.Result
 import data.entity.bets.MenAlpineBets
 import data.probability.ProbabilityCalculator
 import data.entity.bets.SingleBet
@@ -17,6 +19,10 @@ import ga.rsikminimization.BaseCrosserWithRepeats
 import ga.rsikminimization.RiskMinimizationRater
 import org.apache.commons.math3.util.Decimal64.NAN
 import utils.*
+import kotlin.math.round
+import java.math.BigDecimal
+import java.math.RoundingMode
+
 
 class Main {
     companion object {
@@ -28,8 +34,8 @@ class Main {
         val MAX_VALUE = 1.6
         val MIN_SINGLE_BET_ODD = 1.3
         val MAX_SINGLE_BET_ODD = 2.6
-        val ITERANTIONS = 300
-        val POPULATION_SIZE = 30
+        val ITERANTIONS = 500
+        val POPULATION_SIZE = 100
         val TOURNAMENT_SIZE = 4
         val ELITE_PERCENTAGE = 3
         val ELITE_COUNT : Int = if((POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() > 0) (POPULATION_SIZE * ELITE_PERCENTAGE * 0.01).toInt() else 1
@@ -42,15 +48,15 @@ class Main {
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val PROB_MEAN = 1/3.0
+        val  PROB_MEAN = 1/4.0
 
         // PROPORTIONAL RISK ONLY
-        val BASE_ODD = 1.8
+        val BASE_ODD = 1.6
         val ODD_STEP = 0.4
         var PROPORTIONAL_IN_USE = false
         // CONST
 
-        val MODE = Mode.MSki
+        val MODE = Mode.Jump
 
         enum class Mode {
             Jump, MSki, WSki
@@ -58,7 +64,47 @@ class Main {
 
         @JvmStatic
         fun main(args: Array<String>) {
-            simulateSystem()
+            val results = mutableListOf<List<Double>>()
+            val iterations = 100
+            for(i in 1  .. iterations){
+                simulateSystem().let {
+                    results.add(it)
+                }
+                println(i)
+            }
+            val resultObject = getResultObject(results)
+            val gson = Gson()
+            val resultJson = gson.toJson(resultObject)
+            val x = 10
+            val z =2
+        }
+
+        private fun getResultObject(results: List<List<Double>>) : Result {
+            val resultObject = Result()
+            results[0].forEach {
+                resultObject.statesMeans.add(0.0)
+            }
+            results.forEach {
+                for(i in it.indices) {
+                    resultObject.statesMeans[i] += it[i]
+                }
+                resultObject.finalStates.add(it.last())
+            }
+            for (i in 0 until resultObject.statesMeans.size) {
+                resultObject.statesMeans[i] = resultObject.statesMeans[i]/ results.size
+            }
+
+            // set 2 precision
+            for (i in 0 until resultObject.statesMeans.size) {
+                resultObject.statesMeans[i] = BigDecimal( resultObject.statesMeans[i]).setScale(2, RoundingMode.HALF_UP).toDouble()
+            }
+
+            for (i in 0 until resultObject.finalStates.size) {
+                resultObject.finalStates[i] = BigDecimal( resultObject.finalStates[i]).setScale(2, RoundingMode.HALF_UP).toDouble()
+            }
+            // set 2 precision
+
+            return resultObject
         }
 
         fun getSingleBets(minValue: Double, maxValue: Double, minOdd: Double, maxOdd: Double, index : Int): List<SingleBet> {
@@ -82,11 +128,11 @@ class Main {
             return singleBetsFiltered
         }
 
-        fun simulateSystem() {
+        fun simulateSystem() : List<Double> {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            val stackStrategy : StackStrategy = FixedStack(1000.0, 100.0)
+            val stackStrategy : StackStrategy = PercentageStack(1000.0, 10.0)
             for(i in 0 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
@@ -101,13 +147,13 @@ class Main {
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
                         LineChart(),
                         stackStrategy = stackStrategy)
-//                val best = algorithm.run() ?: return
-                val best = CouponsGroup()
-                chosenBets.forEach {
-                    val c = Coupon()
-                    c.bets.add(it)
-                    best.coupons.add(c)
-                }
+                val best = algorithm.run() ?:  return listOf<Double>()
+//                val best = CouponsGroup()
+//                chosenBets.forEach {
+//                    val c = Coupon()
+//                    c.bets.add(it)
+//                    best.coupons.add(c)
+//                }
                 stackStrategy.modifyContribution(best, true)
                 stackStrategy.updateBankroll(best)
                 best?.let {
@@ -116,13 +162,14 @@ class Main {
                 }
             }
             val totalGain = gains.sum()
-            bets.forEach {
-                println("bets: $it")
-            }
-            gains.forEach {
-                println("Gain: $it")
-            }
-            println("Total gain: $totalGain")
+//            bets.forEach {
+//                println("bets: $it")
+//            }
+//            gains.forEach {
+//                println("Gain: $it")
+//            }
+//            println("Total gain: $totalGain")
+            return stackStrategy.bankrollStates
         }
 
         fun setLastTournament (index : Int) {

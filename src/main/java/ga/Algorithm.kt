@@ -28,7 +28,7 @@ class Algorithm(
         populationRater.ratePopulation(population)
         initChartDataset()
         updateChartsData(iteration)
-        Printer.printPopulationStatistics(population, iteration)
+//        Printer.printPopulationStatistics(population, iteration)
         var bestCache = 0.0
         var theSameBestIterations = 0
         var forceOperators = false
@@ -51,9 +51,9 @@ class Algorithm(
                 forceOperators = true
                 theSameBestIterations = 0
                 theSameBestIterationsTimes ++
-                println(" ------------------------------------------ FORCE OPERATORS ------------------------------------------")
+//                println(" ------------------------------------------ FORCE OPERATORS ------------------------------------------")
                 if(theSameBestIterationsTimes >= Main.THE_SAME_BEST_ITERATIONS_TIMES ){
-                    println(" ------------------------------------------ INIT NEW POP ------------------------------------------")
+//                    println(" ------------------------------------------ INIT NEW POP ------------------------------------------")
                     forceOperators = false
                     theSameBestIterationsTimes = 0
                     population = populationInitializer.initPopulation(populationSize, availableBets) as MutableList<CouponsGroup>
@@ -71,7 +71,7 @@ class Algorithm(
             population.addAll(elite)
             populationRater.ratePopulation(population)
             iteration++
-            Printer.printPopulationStatistics(population, iteration)
+//            Printer.printPopulationStatistics(population, iteration)
             updateChartsData(iteration)
             if(forceOperators)
                 forceOperators = !forceOperators
@@ -80,15 +80,15 @@ class Algorithm(
 
         val best = population.minByOrNull { it.rate }
 //        drawGainChart(best)
-        printExpectedValue(best)
+//        printExpectedValue(best)
 
         val probs = mutableListOf<Double>()
         best?.coupons?.forEach { probs.add(it.getProb()) }
         val odds = mutableListOf<Double>()
         best?.coupons?.forEach { odds.add(it.getOdd()) }
         odds.sort()
-        println("COUPONS: ${best?.coupons?.size}")
-        println("ALL BETS: ${best?.coupons?.sumBy { it.bets.size }}")
+//        println("COUPONS: ${best?.coupons?.size}")
+//        println("ALL BETS: ${best?.coupons?.sumBy { it.bets.size }}")
         val x = 2
 
         return best
