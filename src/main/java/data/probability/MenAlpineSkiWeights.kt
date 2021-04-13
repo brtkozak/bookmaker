@@ -18,7 +18,7 @@ class MenAlpineSkiWeights : Weights {
         var weight = 1.0
         MenAlpineBets.currentSkiType?.let {
             if(it == jump.skiType)
-                weight = 10000.0
+                weight = 20.0 // 50
         }
         return weight
     }

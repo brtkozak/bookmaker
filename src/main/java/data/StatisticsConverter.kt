@@ -106,7 +106,7 @@ class StatisticsConverter {
             val secondsSplit = secondsPart.split(".")
             seconds = secondsSplit[0].toInt()
             miniSeconds = secondsSplit[1].toInt()
-            points = (minutes * 60000 + seconds * 1000 + miniSeconds).toDouble()
+            points = (minutes * 60000 + seconds * 1000 + miniSeconds * 10).toDouble()
         }
         return Jump(tournament = tournament.name, tournamentType = type, points = points, day = tournament.day, skiType = tournament.skiType, place = result.place)
     }

@@ -19,7 +19,7 @@ class WomenAlpeinWeights : Weights {
         var weight = 1.0
         WomenAlpeinBets.currentSkiType?.let {
             if(it == jump.skiType)
-                weight = 1000.0
+                weight = 10.0
         }
         return weight
     }
