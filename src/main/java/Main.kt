@@ -48,7 +48,7 @@ class Main {
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val  PROB_MEAN = 1/4.0
+        val  PROB_MEAN = 1/3.0
 
         // PROPORTIONAL RISK ONLY
         val BASE_ODD = 2.0
@@ -56,7 +56,7 @@ class Main {
         var PROPORTIONAL_IN_USE = false
         // CONST
 
-        val MODE = Mode.Jump
+        val MODE = Mode.MSki
 
         enum class Mode {
             Jump, MSki, WSki
@@ -132,7 +132,7 @@ class Main {
             val eventsSize = getEventsSize()
             val gains = mutableListOf<Double>()
             val bets = mutableListOf<Int>()
-            val stackStrategy : StackStrategy = KellyStack(1000.0)
+            val stackStrategy : StackStrategy = PercentageStack(1000.0, 10.0)
             for(i in 0 until eventsSize ) {
                 setLastTournament(i)
                 val chosenBets = getSingleBets(MIN_VALUE, MAX_VALUE, MIN_SINGLE_BET_ODD, MAX_SINGLE_BET_ODD, i)
@@ -147,13 +147,13 @@ class Main {
                         listOf(DoubleBetSwapMutator(), SingleBetSwapMutator()),
                         LineChart(),
                         stackStrategy = stackStrategy)
-//                val best = algorithm.run() ?:  return listOf<Double>()
-                val best = CouponsGroup()
-                chosenBets.forEach {
-                    val c = Coupon()
-                    c.bets.add(it)
-                    best.coupons.add(c)
-                }
+                val best = algorithm.run() ?:  return listOf<Double>()
+//                val best = CouponsGroup()
+//                chosenBets.forEach {
+//                    val c = Coupon()
+//                    c.bets.add(it)
+//                    best.coupons.add(c)
+//                }
                 stackStrategy.modifyContribution(best, true)
                 stackStrategy.updateBankroll(best)
                 best?.let {

@@ -22,7 +22,7 @@ class ProbabilityCalculator {
         val probabilities = mutableListOf<Probability?>()
         for (i in 0..jumpersResult.size - 2) {
             for (j in i + 1 until jumpersResult.size) {
-                probabilities.add(calculateProbability(jumpersResult[i], jumpersResult[j]))
+                probabilities.add(calculateProbability01(jumpersResult[i], jumpersResult[j]))
             }
         }
         return probabilities.filterNotNull()
@@ -129,8 +129,8 @@ class ProbabilityCalculator {
             }
         }
 
-        val mean = stats.mean
-//        val mean = stats.getPercentile(50.0)
+//        val mean = stats.mean
+        val mean = stats.getPercentile(50.0)
         val std = stats.standardDeviation
         // test
         val name1 = "bennett"
