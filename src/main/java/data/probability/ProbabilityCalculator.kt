@@ -129,8 +129,7 @@ class ProbabilityCalculator {
             }
         }
 
-//        val mean = stats.mean
-        val mean = stats.getPercentile(50.0)
+        val mean = stats.mean
         val std = stats.standardDeviation
         // test
         val name1 = "bennett"

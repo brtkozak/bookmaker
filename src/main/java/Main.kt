@@ -48,7 +48,7 @@ class Main {
         // EQUAL PROB ONLY
         val MIN_COUPON_SIZE = 1
         val MAX_COUPON_SIZE = 10
-        val  PROB_MEAN = 1/3.0
+        val  PROB_MEAN = 1/2.0
 
         // PROPORTIONAL RISK ONLY
         val BASE_ODD = 2.0
@@ -56,7 +56,7 @@ class Main {
         var PROPORTIONAL_IN_USE = false
         // CONST
 
-        val MODE = Mode.MSki
+        val MODE = Mode.WSki
 
         enum class Mode {
             Jump, MSki, WSki
